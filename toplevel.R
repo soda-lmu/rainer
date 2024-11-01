@@ -6,3 +6,10 @@ library(usethis)
 load_all()
 
 devtools::check()
+
+var2 = 9
+
+summary(var1)
+
+explain()
+

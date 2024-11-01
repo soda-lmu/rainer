@@ -7,9 +7,10 @@ load_all()
 
 devtools::check()
 
-var2 = 9
+data = mtcars
+data$fast = ifelse(data$hp > 123, 1, 0)
 
-summary(var1)
+table(data$hp data$fast)
 
 explain()
 

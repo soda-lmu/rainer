@@ -22,10 +22,10 @@ call_openai_api = function(client, body) {
   #cat("Response content:", content(response, "text"), "\n")
 
   #Check if request was successful
-  if (status_code(response) == 200) {
-    return(jsonlite::fromJSON(content(response, "text", encoding = "UTF-8"), flatten = TRUE))
+  if (httr::status_code(response) == 200) {
+    return(jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten = TRUE))
   } else {
-    stop("API request failed with status: ", status_code(response), "\n", content(response, "text", encoding = "UTF-8"))
+    stop("API request failed with status: ", httr::status_code(response), "\n", httr::content(response, "text", encoding = "UTF-8"))
   }
 
 }

@@ -25,7 +25,7 @@ explain = function() {
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
                                           "\n Identify the error and give me a concise feedback of how to correct the issue."))),
-    max_tokens = 100
+    max_tokens = 200
   )
 
   #formatting the response

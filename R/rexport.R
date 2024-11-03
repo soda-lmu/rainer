@@ -1,9 +1,11 @@
 #function to save the current state of the environment in a .json file
 
-rsave = function(filename) {
+rexport = function(filename) {
   environment_info = list(
-    Environment_Objects = ls(envir = .GlobalEnv),
-    packages = devtools::session_info(),
+    objects = Environment_Objects(),
+    data_header = header(),
+    directory = getwd(),
+    packages = list(sessionInfo()[[1]]),
     current_script = try(rstudioapi::getActiveDocumentContext()$contents),
     errors = geterrmessage()
   )

@@ -1,11 +1,12 @@
 #Function: rainer::explain in order to explain the last error message occurred
 
-explain = function() {
+rexplain = function() {
   #Getting the session of the student
   environment_info = list(
-    Environment_Objects = ls(envir = .GlobalEnv),
-    getwd(),
-    packages = devtools::session_info(pkgs = c("attached")),
+    objects = Environment_Objects(),
+    data_header = header(),
+    directory = getwd(),
+    packages = list(sessionInfo()[[1]]),
     current_script = try(rstudioapi::getActiveDocumentContext()$contents),
     errors = geterrmessage()
   )

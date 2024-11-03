@@ -1,0 +1,60 @@
+{
+  "objects": {
+    "data": ["dataframe"],
+    "var1": ["variable"]
+  },
+  "data_header": {
+    "data": [
+      {
+        "mpg": 21,
+        "cyl": 6,
+        "disp": 160,
+        "hp": 110,
+        "drat": 3.9,
+        "wt": 2.62,
+        "qsec": 16.46,
+        "vs": 0,
+        "am": 1,
+        "gear": 4,
+        "carb": 4,
+        "_row": "Mazda RX4"
+      },
+      {
+        "mpg": 21,
+        "cyl": 6,
+        "disp": 160,
+        "hp": 110,
+        "drat": 3.9,
+        "wt": 2.875,
+        "qsec": 17.02,
+        "vs": 0,
+        "am": 1,
+        "gear": 4,
+        "carb": 4,
+        "_row": "Mazda RX4 Wag"
+      }
+    ],
+    "var1": {}
+  },
+  "directory": ["/Users/niklasippisch/Documents/Projekte/rainer/github/rainer"],
+  "packages": [
+    {
+      "platform": ["aarch64-apple-darwin20"],
+      "arch": ["aarch64"],
+      "os": ["darwin20"],
+      "system": ["aarch64, darwin20"],
+      "status": [""],
+      "major": ["4"],
+      "minor": ["4.1"],
+      "year": ["2024"],
+      "month": ["06"],
+      "day": ["14"],
+      "svn rev": ["86737"],
+      "language": ["R"],
+      "version.string": ["R version 4.4.1 (2024-06-14)"],
+      "nickname": ["Race for Your Life"]
+    }
+  ],
+  "current_script": ["#toplevel script for testing the function etc. Will be removed later, currently producing 1 note", "", "library(devtools)", "library(usethis)", "", "load_all()", "", "devtools::check()", "", "#examples for checking", "data = mtcars", "var1 = 5", "data$fast = ifelse(data$hp > 123, 1, 0)", "table(data$hp, data$fast)", "", "rexport(\"test1\")", "rexplain()", "", "", "", ""],
+  "errors": ["Error in rexport(\"test1\") : could not find function \"rexport\"\n"]
+}

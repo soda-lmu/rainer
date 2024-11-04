@@ -8,5 +8,4 @@ ractivate = function(switch) {
 
   } else {return(invisible(NULL))}
 }
-?last.warning
 

@@ -25,7 +25,8 @@ rexplain = function() {
       list(role = "system", content = "You are helping students in an university level R programming course for beginners."),
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
-                                          "\n Identify the error and give me a concise feedback of how to correct the issue."))),
+                                          "\n Identify the error and give me a concise feedback in style of the Hattie & Timperley (2007)
+                                          feedback framework of how to correct the issue."))),
     max_tokens = 250
   )
 

@@ -1,3 +1,5 @@
 ^rainer\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^.github
+^toplevel.R

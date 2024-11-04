@@ -19,7 +19,7 @@ header = function() {
   obj_types = Environment_Objects()
   sapply(names(obj_types), function(name) {
     if (obj_types[[name]] == "dataframe") {
-      return(head(get(name, envir = .GlobalEnv), n = 2))
+      return(utils::head(get(name, envir = .GlobalEnv), n = 2))
     } else {return(NULL)}
   }, simplify = FALSE)
 }

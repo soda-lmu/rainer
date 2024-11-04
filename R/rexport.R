@@ -5,7 +5,7 @@ rexport = function(filename) {
     objects = Environment_Objects(),
     data_header = header(),
     directory = getwd(),
-    packages = list(sessionInfo()[[1]]),
+    packages = list(loadedNamespaces()),
     current_script = try(rstudioapi::getActiveDocumentContext()$contents),
     errors = geterrmessage()
   )

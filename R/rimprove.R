@@ -1,6 +1,6 @@
-#Function: rainer::rexplain in order to explain the last error message occurred
+#Function: rainer::rimprove in order to improve the script written
 
-rexplain = function() {
+rimprove = function() {
   #Getting the session of the student
   environment_info = list(
     objects = Environment_Objects(),
@@ -25,7 +25,7 @@ rexplain = function() {
       list(role = "system", content = "You are helping students in an university level R programming course for beginners."),
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
-                                          "\n Identify the error and give me a concise feedback of how to correct the issue."))),
+                                          "\n Give me suggestions how to improve and shorten my script."))),
     max_tokens = 250
   )
 

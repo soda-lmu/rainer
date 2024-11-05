@@ -1,4 +1,4 @@
-#function to save the current state of the environment in a .json file
+#Function: rainer::rexport in order to export the script information (might be deleted later)
 
 rexport = function(filename) {
   environment_info = list(

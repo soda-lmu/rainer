@@ -1,12 +1,13 @@
-#Function: rainer::explain to help the student if no error message occured, but the results are not as intended
-rexplain = function() {
+#Function: rainer::rerror in order to help a student if an error message occured
+rerror = function() {
   #Getting the session of the student
   environment_info = list(
     objects = Environment_Objects(),
     data_header = header(),
     directory = getwd(),
     packages = list(loadedNamespaces()),
-    current_script = try(rstudioapi::getActiveDocumentContext()$contents)
+    current_script = try(rstudioapi::getActiveDocumentContext()$contents),
+    errors = geterrmessage()
   )
 
   #Azure OpenAI Client
@@ -24,7 +25,8 @@ rexplain = function() {
                                       and give feedback based on the Hattie & Timperley (2007) feedback framework."),
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
-                                          "\n Please explain why the last code in the script did not yield the result I wanted. You can ignore the function 'rexplain()'"))),
+                                          "\n Identify the errors (there might be multiple) and give me concise feedback of how to correct the issue.
+                                          Check especially whether the data, the variables, functions and packages in the code are loaded."))),
     max_tokens = 250
   )
 

@@ -1,4 +1,4 @@
-#rainer::raictivate to activate/deactivate automatical feedback in case of a warning message
+#Function: rainer::raictivate to activate/deactivate automatical feedback in case of a warning message
 
 ractivate = function(switch) {
   if(switch == "on") {

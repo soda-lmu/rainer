@@ -4,7 +4,7 @@ load_all()
 devtools::check()
 
 data = mtcars
-summary[data$hp]
+data$weight_kg = data$wt*0.454
+summary(data$weight_kg)
 
-
-rerror()
+rexplain()

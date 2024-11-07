@@ -1,5 +1,6 @@
 #Function: rainer::explain to help the student if no error message occured, but the results are not as intended
-rexplain = function() {
+rexplain = function(question = "The code does not result I intended. Please explain what the problem might be") {
+
   #Getting the session of the student
   environment_info = list(
     objects = Environment_Objects(),
@@ -23,8 +24,7 @@ rexplain = function() {
       list(role = "system", content = "You are helping students in an university level R programming course for beginners
                                       and give feedback based on the Hattie & Timperley (2007) feedback framework."),
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
-                                          jsonlite::toJSON(environment_info, auto_unbox = TRUE),
-                                          "\n Please explain why the last code in the script did not yield the result I wanted. You can ignore the function 'rexplain()'"))),
+                                          jsonlite::toJSON(environment_info, auto_unbox = TRUE), question))),
     max_tokens = 250
   )
 

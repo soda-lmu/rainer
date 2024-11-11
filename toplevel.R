@@ -7,4 +7,8 @@ data = mtcars
 data$weight_kg = data$wt*0.454
 summary(data$weight_kg)
 
+ractivate("on")
 rexplain()
+
+ractivate("off")
+

@@ -23,9 +23,10 @@ rerror = function() {
     messages = list(
       list(role = "system", content = "You are helping students in an university level R programming course for beginners
                                       and give feedback based on the Hattie & Timperley (2007) feedback framework."),
+
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
-                                          "\n Identify the errors (there might be multiple) and give me concise feedback of how to correct the issue.
+                                          "\n Identify the errors (there might be multiple) and give me feedback of how to correct the issue as consise as possible.
                                           Check especially whether the data, the variables, functions and packages in the code are loaded."))),
     max_tokens = 250
   )

@@ -4,10 +4,12 @@ devtools::load_all()
 devtools::check()
 
 data = mtcars
-data$weight_kg = data$wt*0.454
-summary(data$weight_kg)
+var1 = 5
+summary[data$hp]
+
 
 ractivate("on")
 rexplain("Why is there Length 0 and NULL at class and mode in the table?")
 rerror()
 ractivate("off")
+rexport("test1")

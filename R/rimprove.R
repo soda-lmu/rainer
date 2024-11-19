@@ -1,23 +1,15 @@
 #Function: rainer::rimprove in order to improve the script written
 
 rimprove = function() {
+
   #Getting the session of the student
   environment_info = list(
-    objects = Environment_Objects(),
-    data_header = header(),
-    directory = getwd(),
-    packages = list(loadedNamespaces()),
-    current_script = try(rstudioapi::getActiveDocumentContext()$contents),
-    errors = geterrmessage()
-  )
-
-  #Azure OpenAI Client
-  client = list(
-    azure_endpoint = "https://soda-oai-easyaccess-prod-swedencentral.openai.azure.com",
-    api_key = "39257ccf9f724bdc81add8c7ca1e155b",
-    deployment_name = "gpt-35-turbo",
-    api_version = "2024-08-01-preview"
-  )
+    objects = Environment_Objects(), #function to get the object names incl. classification
+    data_header = header(), #function to get the data incl. first two rows to see the structure
+    directory = getwd(), #working directory
+    packages = list(loadedNamespaces()), #loaded packages, not all installed
+    current_script = try(rstudioapi::getActiveDocumentContext()$contents) #current script
+  ) #error messages left out since GPT would otherwise just focus on that
 
   #building the message
   body = list(
@@ -30,8 +22,8 @@ rimprove = function() {
   )
 
   #formatting the response
-  response_json = call_openai_api(client = client, body = body)
-  content_vector = response_json$choices$message.content
+  response_json = call_openai_api(body = body) #function to send to GPT incl. response
+  content_vector = response_json$choices$message.content #formatting the response
 
   #printing the response
   print(content_vector)

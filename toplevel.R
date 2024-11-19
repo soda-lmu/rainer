@@ -1,5 +1,4 @@
 #toplevel script for testing the function etc. Will be removed later, listed in .Rbuildignore
-#library(devtools)
 devtools::load_all()
 devtools::check()
 

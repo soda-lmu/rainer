@@ -8,7 +8,7 @@ rimprove = function() {
     data_header = header(), #function to get the data incl. first two rows to see the structure
     directory = getwd(), #working directory
     packages = list(loadedNamespaces()), #loaded packages, not all installed
-    current_script = try(rstudioapi::getActiveDocumentContext()$contents) #current script
+    current_script = try(rstudioapi::getSourceEditorContext()$contents) #current script
   ) #error messages left out since GPT would otherwise just focus on that
 
   #building the message

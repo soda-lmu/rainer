@@ -1,4 +1,4 @@
-#Function: rainer::rerror in order to help a student if an error message occured
+#Function: rainer::rerror in order to help a student if an error message occurred
 rerror = function() {
   #Getting the session of the student
   environment_info = list(
@@ -6,7 +6,7 @@ rerror = function() {
     data_header = header(), #function to get the data incl. first two rows to see the structure
     directory = getwd(), #working directory
     packages = list(loadedNamespaces()), #loaded packages, not all installed
-    current_script = try(rstudioapi::getActiveDocumentContext()$contents), #current script
+    current_script = try(rstudioapi::getSourceEditorContext()$content), #current script
     errors = geterrmessage() #last error message
   )
 

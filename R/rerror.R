@@ -23,7 +23,7 @@ rerror = function() {
                                           "\n Identify the errors (there might be multiple) and give me feedback of how to correct the issue
                                           in maximum three senctences.
                                           ."))),
-    max_tokens = 250
+    max_tokens = 200
   )
 
   #formatting the response

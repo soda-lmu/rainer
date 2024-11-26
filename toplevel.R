@@ -1,14 +1,23 @@
 #toplevel script for testing the function etc. Will be removed later, listed in .Rbuildignore
-devtools::check()
+
 devtools::load_all()
 
+load("gpa2.RData")
+gpa2 = data
 
-var1 = 5
-var2 = 3
-var3 = var_1 * var2
+plot = ggplot(data = mtcars, mapping = aes(x = hp, y = cyl)) +  geom_point()
+
+scatter_colgpa_sat = ggplot(gpa2, mapping = aes(x = sat, y = colgpa)) +
+  geom_point(size = 0.3, alpha = 0.3)
+scatter_colgpa_sat
+scatter_colgpa_hsperc = ggplot(gpa2, mapping = aes(x = hsperc, y = colgpa)) +
+  geom_point(size = 0.3, alpha = 0.3)
+scatter_colgpa_hsperc
+
+model_a15 = lm(colgpa ~ sat + hsperc + athlete, data = gpa2)
+summary(model_a15)
+coefficients(model_a15)
+model_a15_sat = lm(colgpa ~ sat, data = gpa2)
+model_a15_hsperc = lm(colgpa ~ hsperc, data = gpa2)
 
 rerror()
-ractivate("on")
-rexplain("Why is there Length 0 and NULL at class and mode in the table?")
-ractivate("off")
-rexport("test1")

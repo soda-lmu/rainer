@@ -18,7 +18,7 @@ rimprove = function() {
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
                                           "\n Give me suggestions how to improve and shorten my script."))),
-    max_tokens = 250
+    max_tokens = 200
   )
 
   #formatting the response

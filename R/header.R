@@ -1,7 +1,7 @@
 #function for getting the structure of the dataframe(s) loaded
 
 header = function() {
-  obj_types = Environment_Objects() #getting all objects
+  obj_types = environment_objects() #getting all objects
 
   dataframe_names = names(obj_types)[obj_types == "dataframe"] #names for all dataframes
 

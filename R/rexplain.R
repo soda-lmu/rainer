@@ -20,7 +20,7 @@ rexplain = function(question = "The code does not yield the result I intended. P
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
                                           "Answer my following question in maximum 3 sentences: \n",
                                           question))),
-    max_tokens = 250
+    max_tokens = 200
   )
 
   #formatting the response

@@ -2,7 +2,7 @@
 
 rexport = function(filename) {
   environment_info = list(
-    objects = Environment_Objects(),
+    objects = environment_objects(),
     data_header = header(),
     directory = getwd(),
     packages = list(loadedNamespaces()),

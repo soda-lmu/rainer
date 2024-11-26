@@ -1,14 +1,14 @@
 #toplevel script for testing the function etc. Will be removed later, listed in .Rbuildignore
-devtools::load_all()
 devtools::check()
+devtools::load_all()
 
-data = mtcars
+
 var1 = 5
-summary[data$hp]
+var2 = 3
+var3 = var_1 * var2
 
-
+rerror()
 ractivate("on")
 rexplain("Why is there Length 0 and NULL at class and mode in the table?")
-rerror()
 ractivate("off")
 rexport("test1")

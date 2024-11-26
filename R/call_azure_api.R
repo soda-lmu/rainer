@@ -1,7 +1,8 @@
 #function for the interaction with GPT
-call_openai_api = function(body) {
 
-  #Azure OpenAI Client
+call_azure_api = function(body) {
+
+  #Azure Client
   client = list(
     azure_endpoint = "https://soda-oai-easyaccess-prod-swedencentral.openai.azure.com",
     api_key = "39257ccf9f724bdc81add8c7ca1e155b",

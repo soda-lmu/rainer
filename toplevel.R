@@ -5,7 +5,9 @@ devtools::load_all()
 load("gpa2.RData")
 gpa2 = data
 
-plot = ggplot(data = mtcars, mapping = aes(x = hp, y = cyl)) +  geom_point()
+data = mtcars
+data$weight_kg = data$wt*0.454
+data$weight_kgsq = data$weight_kg^2
 
 scatter_colgpa_sat = ggplot(gpa2, mapping = aes(x = sat, y = colgpa)) +
   geom_point(size = 0.3, alpha = 0.3)

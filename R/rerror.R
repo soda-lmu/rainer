@@ -20,7 +20,7 @@ rerror = function() {
 
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
-                                          "\n Identify the errors (there might be multiple) and give me feedback of how to correct the issue
+                                          "\n Identify the errors (there might be multiple) and give me feedback on how to correct the issue
                                           in maximum three senctences.
                                           ."))),
     max_tokens = 200

@@ -20,8 +20,17 @@ rerror = function() {
 
       list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
                                           jsonlite::toJSON(environment_info, auto_unbox = TRUE),
-                                          "\n Identify the errors (there might be multiple) and give me feedback on how to correct the issue
-                                          in maximum three senctences.
+                                          "\n Question Give feedback on how to correct the issue in maximum three sentences.
+                                          Thought 1 I first have to analyze the information provided and screen briefly the script, the loaded
+                                          data including the structure, the loaded packages, and the variables and functions created.
+                                          Action 1 Analyze information.
+                                          Thought 2 An error message is mentioned. I should check the error message and identify, based on the
+                                          prior analysis, the relevant parts of the information provided which are linked to the error message.
+                                          Action 2 Check error message.
+                                          Thought 3 After the analysis of the information and error message, I am now able to give feedback on
+                                          how to correct the issue in maximum three senctences.
+                                          Action 3 End [Explain]
+                                          Question Give feedback on how to correct the issue in maximum three sentences
                                           ."))),
     max_tokens = 200
   )

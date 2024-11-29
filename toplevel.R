@@ -5,6 +5,7 @@ devtools::load_all()
 load("gpa2.RData")
 gpa2 = data
 
+data = mtcars
 var1 = 5
 var2 = 3
 var3 = var_1 * var2

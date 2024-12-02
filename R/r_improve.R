@@ -1,15 +1,13 @@
 #Function: rainer::rimprove in order to improve the script written
 
-rimprove = function() {
+r_improve = function(error = FALSE) {
 
   #Getting the session of the student
-  environment_info = list(
-    objects = environment_objects(), #function to get the object names incl. classification
-    data_header = header(), #function to get the data incl. first two rows to see the structure
-    directory = getwd(), #working directory
-    packages = list(loadedNamespaces()), #loaded packages, not all installed
-    current_script = try(rstudioapi::getSourceEditorContext()$contents) #current script
-  ) #error messages left out since GPT would otherwise just focus on that
+  environment = list(
+    if(error) {environment_info_error()
+    } else {
+      environment_info()}
+  )
 
   #building the message
   body = list(

@@ -1,0 +1,35 @@
+[
+  {
+    "objects": {
+      "data": ["dataframe"],
+      "environment": ["variable"],
+      "environment_info": ["function"],
+      "var1": ["variable"],
+      "var2": ["variable"]
+    },
+    "data_header": {
+      "data": [
+        {
+          "mpg": 21,
+          "cyl": 6,
+          "disp": 160,
+          "hp": 110,
+          "drat": 3.9,
+          "wt": 2.62,
+          "qsec": 16.46,
+          "vs": 0,
+          "am": 1,
+          "gear": 4,
+          "carb": 4,
+          "_row": "Mazda RX4"
+        }
+      ]
+    },
+    "directory": ["/Users/niklasippisch/Documents/Projekte/rainer/github/rainer"],
+    "packages": [
+      ["methods", "graphics", "utf8", "stringi", "digest", "magrittr", "grDevices", "pkgload", "fastmap", "rprojroot", "jsonlite", "pkgbuild", "sessioninfo", "brio", "urlchecker", "promises", "httr", "purrr", "fansi", "cli", "shiny", "rlang", "ellipsis", "remotes", "withr", "utils", "cachem", "devtools", "stats", "tools", "base", "memoise", "httpuv", "curl", "vctrs", "R6", "mime", "lifecycle", "stringr", "fs", "htmlwidgets", "usethis", "miniUI", "pkgconfig", "desc", "pillar", "later", "glue", "profvis", "Rcpp", "tibble", "rstudioapi", "xtable", "datasets", "htmltools", "testthat", "compiler", "rainer"]
+    ],
+    "current_script": ["#toplevel script for testing the function etc. Will be removed later, listed in .Rbuildignore", "", "devtools::load_all()", "", "load(\"gpa2.RData\")", "gpa2 = data", "", "data = mtcars", "var1 = 5", "var2 = 3", "var3 = var_1 * var2", "", "scatter_colgpa_sat = ggplot(gpa2, mapping = aes(x = sat, y = colgpa)) +", "  geom_point(size = 0.3, alpha = 0.3)", "scatter_colgpa_sat", "scatter_colgpa_hsperc = ggplot(gpa2, mapping = aes(x = hsperc, y = colgpa)) +", "  geom_point(size = 0.3, alpha = 0.3)", "scatter_colgpa_hsperc", "", "model_a15 = lm(colgpa ~ sat + hsperc + athlete, data = gpa2)", "summary(model_a15)", "coefficients(model_a15)", "model_a15_sat = lm(colgpa ~ sat, data = gpa2)", "model_a15_hsperc = lm(colgpa ~ hsperc, data = gpa2)", "", "r_error()", "", "r_explain(\"Wieso funktioniert der Code nicht, obowohl ich var1 definiert habe?\")", "", "r_export(\"test1\", error = TRUE)", "", "r_activate(FALSE)", ""],
+    "error": ["Error: object 'var_1' not found\n"]
+  }
+]

@@ -10,6 +10,7 @@ var1 = 5
 var2 = 3
 var3 = var_1 * var2
 
+
 scatter_colgpa_sat = ggplot(gpa2, mapping = aes(x = sat, y = colgpa)) +
   geom_point(size = 0.3, alpha = 0.3)
 scatter_colgpa_sat
@@ -23,4 +24,7 @@ coefficients(model_a15)
 model_a15_sat = lm(colgpa ~ sat, data = gpa2)
 model_a15_hsperc = lm(colgpa ~ hsperc, data = gpa2)
 
-rerror()
+
+r_error(language = "german")
+
+r_explain("Wieso kommt bei summary keine Tabelle, obowohl hp in data existiert?")

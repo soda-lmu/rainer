@@ -1,12 +1,15 @@
-#Function: rainer::rexport in order to export the script information (might be deleted later)
+#' Exports the environment information into a JSON file
+#'
+#' This function exports the gathered information about the environment.
+#'
+#' @param filename The name the file is supposed to have
+#' @param error Logical. If TRUE, adds the last error message to the output.
+#' @return NULL. The function writes a file.
+#' @import jsonlite
+#' @export
 
-r_export = function(filename, error = TRUE) {
-  environment = list(
-    if(error) {environment_info_error()
-    } else {
-      environment_info()}
-  )
+r_export <- function(filename, error = TRUE) {
+  environment <- environment_info(error)
 
   jsonlite::write_json(environment, path = filename, pretty = TRUE)
 }
-

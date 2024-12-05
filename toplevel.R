@@ -25,6 +25,7 @@ model_a15_sat = lm(colgpa ~ sat, data = gpa2)
 model_a15_hsperc = lm(colgpa ~ hsperc, data = gpa2)
 
 
-r_error(language = "german")
+r_error(error = FALSE)
+r_improve()
 
 r_explain("Wieso kommt bei summary keine Tabelle, obowohl hp in data existiert?")

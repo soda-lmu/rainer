@@ -1,13 +1,20 @@
-#Function: rainer::raictivate to activate/deactivate automatic feedback in case of a warning message
+#' Automatic activation of r_error
+#'
+#' This function enables r_error, the explanation of error message, automatically when an error message is
+#' visible.
+#'
+#' @param switch Logical. If TRUE, r_error is triggered automatically when an error message occurs. Use FALSE to deactivate the function.
+#' @return Response
+#' @export
 
-r_activate = function(switch = TRUE) {
+r_activate <- function(switch = TRUE) {
   if(switch == TRUE) {
-    options(error = function() r_error()) #overriding the current error settings, in order to trigger r_error()
+    options(error = function() r_error())
   } else
     if(switch == FALSE) {
-      options(error = NULL) #returning to default settings when turning off r_activate
+      options(error = NULL)
     } else {
-        return("Please write 'TRUE' or 'FALSE' in the function.") #error message if something else than on/off is put into the function
+        return("Please write 'TRUE' or 'FALSE' in the function.")
       }
 }
 

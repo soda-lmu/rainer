@@ -29,11 +29,12 @@ r_error <- function(error = TRUE, language = NULL) {
                                           jsonlite::toJSON(environment, auto_unbox = TRUE),
                                           "Analyze the information I provided step by step and afterwards give feedback on how to correct the issue in maximum three senctences.",
                                           "Answer me in ", language))),
-    max_tokens = 200
+    max_tokens = 200,
+    model = "gpt-4o"
   )
 
   # formatting the response
-  response_json <- call_gpt_api(body = body)
+  response_json <- call_github_api(body = body)
   content_vector <- response_json$choices$message.content
 
   # printing the response

@@ -2,7 +2,6 @@
 #'
 #' This function gathers the structure of the loaded datasets and is used internally
 #'
-#' @param body The body of the message, containing both the information and the prompt
 #' @return Nothing
 #' @import utils
 

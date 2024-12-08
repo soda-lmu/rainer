@@ -39,7 +39,7 @@ r_explain <- function(question = "The code does not yield the result I intended.
   content_vector <- response_json$choices$message.content
 
   #printing the response
-  print(content_vector)
+  cat(content_vector)
 
 }
 

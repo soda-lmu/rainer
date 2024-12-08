@@ -2,4 +2,4 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^.github
-^toplevel.R
+^toplevel.R$

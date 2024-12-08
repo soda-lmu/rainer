@@ -35,7 +35,7 @@ r_improve <- function(error = FALSE, language = NULL) {
   content_vector <- response_json$choices$message.content
 
   # printing the response
-  print(content_vector)
+  cat(content_vector)
 
 }
 

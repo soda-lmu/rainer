@@ -1,0 +1,4 @@
+Name: r_error
+Description: Executes r_error() in order to explain an error message
+Binding: r_error_addin
+Interaktive: false

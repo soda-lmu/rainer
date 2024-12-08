@@ -6,9 +6,6 @@
 \usage{
 header()
 }
-\arguments{
-\item{body}{The body of the message, containing both the information and the prompt}
-}
 \value{
 Nothing
 }

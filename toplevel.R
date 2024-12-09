@@ -6,9 +6,8 @@ load("gpa2.RData")
 gpa2 = data
 
 data = mtcars
-var1 = 5
-var2 = 3
-var3 = var_1 * var2
+data$weight_kg = data$wt * 0.34
+data$weight_sq = data$weight_kg^2
 
 
 scatter_colgpa_sat = ggplot(gpa2, mapping = aes(x = sat, y = colgpa)) +
@@ -26,8 +25,3 @@ model_a15_hsperc = lm(colgpa ~ hsperc, data = gpa2)
 
 
 r_error()
-r_improve()
-
-r_explain("Wieso kommt bei summary keine Tabelle, obowohl hp in data existiert?")
-
-

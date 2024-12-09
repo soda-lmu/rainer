@@ -4,8 +4,6 @@
 #'
 #' @param body The body of the message, containing both the information and the prompt
 #' @return Nothing
-#' @import jsonlite
-#' @import httr
 
 call_gpt_api <- function(body) {
 

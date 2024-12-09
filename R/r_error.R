@@ -5,7 +5,6 @@
 #' @param error Logical. If TRUE, adds the last error message to the output.
 #' @param language Language the response is supposed to be in
 #' @return Response
-#' @import jsonlite
 #' @export
 
 r_error <- function(error = TRUE, language = NULL) {

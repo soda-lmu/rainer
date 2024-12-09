@@ -1,4 +1,8 @@
-#function for getting the environment objects
+#' Labels Environment Information
+#'
+#' This function labels all loaded objects in the current R environment and is used internally.
+#'
+#' @return Nothing
 
 environment_objects = function(){
   obj_names = ls(envir = .GlobalEnv) #getting the objects in the environment

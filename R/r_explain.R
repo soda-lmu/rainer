@@ -7,7 +7,6 @@
 #' @param error Logical. If TRUE, adds the last error message to the output.
 #' @param language Language the response is supposed to be in. Default is the system language.
 #' @return Response
-#' @import jsonlite
 #' @export
 
 r_explain <- function(question = "The code does not yield the result I intended. Please explain what the problem might be.", error = FALSE, language = NULL) { #default question

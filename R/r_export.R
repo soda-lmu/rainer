@@ -5,7 +5,6 @@
 #' @param filename The name the file is supposed to have
 #' @param error Logical. If TRUE, adds the last error message to the output.
 #' @return NULL. The function writes a file.
-#' @import jsonlite
 #' @export
 
 r_export <- function(filename, error = TRUE) {

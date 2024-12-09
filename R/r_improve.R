@@ -5,7 +5,6 @@
 #' @param error Logical. If TRUE, adds the last error message to the output.
 #' @param language The language the response is supposed to be in. Default is the system language.
 #' @return Response
-#' @import jsonlite
 #' @export
 
 r_improve <- function(error = FALSE, language = NULL) {

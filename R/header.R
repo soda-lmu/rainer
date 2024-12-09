@@ -3,7 +3,6 @@
 #' This function gathers the structure of the loaded datasets and is used internally
 #'
 #' @return Nothing
-#' @import utils
 
 header <- function() {
   # getting all objects

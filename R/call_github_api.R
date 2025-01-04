@@ -19,7 +19,7 @@ call_github_api <- function(body) {
   # Print URL for debugging, just activate it with removing the #
   #cat("URL:", url, "\n")
 
-  token <- "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"
+  token <- "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"
 
   # POST request to API
   response <- httr::POST(

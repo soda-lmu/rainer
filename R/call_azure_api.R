@@ -1,11 +1,11 @@
-#' Function to send the information and prompt to GPT
+#' Function to send the information and prompt to GPT via azure
 #'
 #' This function sends takes care of sending the information and the prompt and is used internally
 #'
 #' @param body The body of the message, containing both the information and the prompt
 #' @return Nothing
 
-call_gpt_api <- function(body) {
+call_azure_api <- function(body) {
 
   # Azure Client
   client <- list(

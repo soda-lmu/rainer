@@ -22,17 +22,17 @@ r_error <- function(error = TRUE, language = NULL) {
   # building the message
   body <- list(
     messages = list(
-      list(role = "system", content = "You are helping students in an R programming course for beginners and give feedback on why it is wrong, how to correct it and how to improve in the future."),
+      list(role = "system", content = "You are helping students in an R programming course for beginners and give feedback on what is wrong, how to correct the mistake and how to improve in the future."),
 
       list(role = "user", content = paste("You got the following information on the current state of my work in R:",
                                           jsonlite::toJSON(environment, auto_unbox = TRUE),
-                                          "Stepwise, identify the errors (there might be multiple) and give me feedback on how to correct the issue in maximum three senctences.",
+                                          "Analyze the information provided step by step and afterwards give feedback on how to correct the issue in maximum three sentences",
                                           "Answer me in ", language))),
     max_tokens = 200
   )
 
   # formatting the response
-  response_json <- call_gpt_api(body = body)
+  response_json <- call_azure_api(body = body)
   content_vector <- response_json$choices$message.content
 
   # printing the response

@@ -30,7 +30,7 @@ r_improve <- function(error = FALSE, language = NULL) {
   )
 
   # formatting the response
-  response_json <- call_gpt_api(body = body)
+  response_json <- call_azure_api(body = body)
   content_vector <- response_json$choices$message.content
 
   # printing the response

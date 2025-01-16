@@ -2,26 +2,23 @@
 
 devtools::load_all()
 
-load("gpa2.RData")
-gpa2 = data
 
-data = mtcars
-data$weight_kg = data$wt * 0.34
-data$weight_sq = data$weight_kg^2
+a 378 + 983
+b <- 3784*3-5
+c <- 3897/19
 
+result <- sum(result_a, result_b, result_c)
 
-scatter_colgpa_sat = ggplot(gpa2, mapping = aes(x = sat, y = colgpa)) +
-  geom_point(size = 0.3, alpha = 0.3)
-scatter_colgpa_sat
-scatter_colgpa_hsperc = ggplot(gpa2, mapping = aes(x = hsperc, y = colgpa)) +
-  geom_point(size = 0.3, alpha = 0.3)
-scatter_colgpa_hsperc
+body <- list(
+  messages = list(
+    list(role = "system", content = "You are helping students in an R programming course for beginners and give feedback on why it is wrong, how to correct it and how to improve in the future."),
 
-model_a15 = lm(colgpa ~ sat + hsperc + athlete, data = gpa2)
-summary(model_a15)
-coefficients(model_a15)
-model_a15_sat = lm(colgpa ~ sat, data = gpa2)
-model_a15_hsperc = lm(colgpa ~ hsperc, data = gpa2)
+    list(role = "user", content = paste("You got the following information on the current state of my work in R:",
+                                        jsonlite::toJSON(environment, auto_unbox = TRUE),
+                                        "Stepwise, identify the errors (there might be multiple) and give me feedback on how to correct the issue in maximum three senctences.",
+                                        "Answer me in ", language))),
+  max_tokens = 200
+)
 
 
-r_error()
+"Step by step, firstly analyze the information provided, then identify the error based on the error message and relevant parts of the information and lastly give me feedback on how to correct the issue in maximum three senctences."

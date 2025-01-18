@@ -5,8 +5,11 @@
 #' @return Nothing
 
 environment_objects = function(){
-  obj_names = ls(envir = .GlobalEnv) #getting the objects in the environment
-  obj_info = sapply(obj_names, function(name) { #function to label the objects
+  # getting the objects in the environment
+  obj_names = ls(envir = .GlobalEnv)
+
+  # function to label the objects
+  obj_info = sapply(obj_names, function(name) {
     obj = get(name, envir = .GlobalEnv)
 
     if (is.function(obj)) {
@@ -18,5 +21,5 @@ environment_objects = function(){
     }
   })
 
-  as.list(obj_info) #formatting the response
+  as.list(obj_info)
 }

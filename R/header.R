@@ -16,9 +16,10 @@ header <- function() {
     return("No datasets loaded in the session")
   } else{
     heads <- lapply(dataframe_names, function(name) {
-      utils::head(get(name, envir = .GlobalEnv), n = 1)
+      names(get(name, envir = .GlobalEnv))
     })
     names(heads) <- dataframe_names
-    return(heads)
+
+    as.list(heads)
   }
 }

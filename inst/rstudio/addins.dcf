@@ -1,4 +1,4 @@
-Name: r_error
-Description: Executes r_error() in order to explain an error message
+Name: Explain an error message
+Description: Executes function r_error() in order to explain an error message
 Binding: r_error_addin
 Interaktive: false

@@ -1,10 +1,9 @@
 #' Function to explain something based on a individual prompt
 #'
-#' This function sends the environment information to GPT and provides feedback on that error based on a prompt
-#' which can be written individually.
+#' Use that function to get an explanation in case the output is not what you expected without getting an error message.
 #'
 #' @param question The individual question/prompt which GPT is supposed to answer.
-#' @param error Logical. If TRUE, adds the last error message to the output.
+#' @param error Logical. If TRUE, adds the last error message to the output. FALSE per default.
 #' @param language Language the response is supposed to be in. Default is the system language.
 #' @return Response
 #' @export

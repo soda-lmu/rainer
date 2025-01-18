@@ -1,8 +1,8 @@
 #' Function to get improvement suggestions
 #'
-#' This function sends the environment information to GPT and provides suggestions on how to improve the script.
+#' Use that function to get improvement suggestions on your current script.
 #'
-#' @param error Logical. If TRUE, adds the last error message to the output.
+#' @param error Logical. If TRUE, adds the last error message to the output. FALSE per default.
 #' @param language The language the response is supposed to be in. Default is the system language.
 #' @return Response
 #' @export

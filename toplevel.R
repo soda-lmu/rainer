@@ -2,6 +2,14 @@
 
 devtools::load_all()
 
+rainer:::language()
+
+Sys.unsetenv("rainer_language")
+
+Sys.unsetenv("rainer_token")
+
+r_export("test")
+
 
 a 378 + 983
 b <- 3784*3-5

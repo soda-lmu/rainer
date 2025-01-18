@@ -1,17 +1,15 @@
 #' Collect Environment Information
 #'
-#' This function gathers information about the current R environment.
+#' This function gathers information about the current R environment and is used internally.
 #'
 #' @param error Logical. If TRUE, adds the last error message to the output.
-#' @return A list containing environment details.
-#' @export
+#' @return Nothing
 
 environment_info <- function(error = TRUE) {
   info <- list(
     current_script = try(rstudioapi::getSourceEditorContext()$contents),
     objects = environment_objects(),
     data_header = header(),
-    directory = getwd(),
     packages = list(loadedNamespaces())
   )
 

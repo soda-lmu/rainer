@@ -4,16 +4,14 @@
 \alias{r_error}
 \title{Provides an explanation for an error message}
 \usage{
-r_error(error = TRUE, language = NULL)
+r_error(error = TRUE)
 }
 \arguments{
-\item{error}{Logical. If TRUE, adds the last error message to the output.}
-
-\item{language}{Language the response is supposed to be in}
+\item{error}{Logical. If FALSE, excludes the last error message in the query. TRUE per default.}
 }
 \value{
 Response
 }
 \description{
-This function sends the environment information to GPT and provides feedback on that error
+Use that function to get an explanation for an error message as well as a suggestion how to correct the issue.
 }

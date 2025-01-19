@@ -12,7 +12,7 @@ r_export(filename, error = TRUE)
 \item{error}{Logical. If TRUE, adds the last error message to the output.}
 }
 \value{
-NULL. The function writes a file.
+nothing
 }
 \description{
 This function exports the gathered information about the environment.

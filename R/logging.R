@@ -15,14 +15,26 @@ logging <- function() {
 
   if(tolower(response_log) == "y") {
 
-    Sys.setenv(rainer_log = TRUE)
+    logging_path <- file.path(R.home("etc"), "rainer_logging")
+
+    file.create(logging_path)
+
+    cat("TRUE \n", file = logging_path)
+
+    Sys.setenv(rainer_logging = TRUE)
 
     invisible(TRUE)
 
     cat("Thank you for accepting the logging and making it possible to further develop RAINER. \n")
   } else if(tolower(response_log) == "n") {
 
-    Sys.setenv(rainer_log = FALSE)
+    logging_path <- file.path(R.home("etc"), "rainer_logging")
+
+    file.create(logging_path)
+
+    cat("FALSE \n", file = logging_path)
+
+    Sys.setenv(rainer_logging = FALSE)
 
     invisible(TRUE)
 

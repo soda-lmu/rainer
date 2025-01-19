@@ -12,15 +12,29 @@ language <- function() {
   response_lan <- readline()
 
   if((response_lan) == 1) {
-    cat("RAINER wird in Deutsch antworten. \n")
+
+    language_path <- file.path(R.home("etc"), "rainer_language")
+
+    file.create(language_path)
+
+    cat("german \n", file = language_path)
 
     Sys.setenv(rainer_language = "german")
 
+    cat("RAINER wird in Deutsch antworten. \n")
+
     invisible(TRUE)
   } else if((response_lan) == 2) {
-    cat("RAINER will respond in english. \n")
+
+    language_path <- file.path(R.home("etc"), "rainer_language")
+
+    file.create(language_path)
+
+    cat("english \n", file = language_path)
 
     Sys.setenv(rainer_language = "english")
+
+    cat("RAINER will respond in english. \n")
 
     invisible(TRUE)
   } else {

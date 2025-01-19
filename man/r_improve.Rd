@@ -7,7 +7,7 @@
 r_improve(error = FALSE, language = NULL)
 }
 \arguments{
-\item{error}{Logical. If TRUE, adds the last error message to the output.}
+\item{error}{Logical. If TRUE, adds the last error message to the output. FALSE per default.}
 
 \item{language}{The language the response is supposed to be in. Default is the system language.}
 }
@@ -15,5 +15,5 @@ r_improve(error = FALSE, language = NULL)
 Response
 }
 \description{
-This function sends the environment information to GPT and provides suggestions on how to improve the script.
+Use that function to get improvement suggestions on your current script.
 }

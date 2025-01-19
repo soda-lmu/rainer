@@ -10,8 +10,8 @@ environment_info(error = TRUE)
 \item{error}{Logical. If TRUE, adds the last error message to the output.}
 }
 \value{
-A list containing environment details.
+Nothing
 }
 \description{
-This function gathers information about the current R environment.
+This function gathers information about the current R environment and is used internally.
 }

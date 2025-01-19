@@ -13,6 +13,12 @@ github_token <- function(){
 
   response_token <- readline()
 
+  token_path <- file.path(R.home("etc"), "rainer_token")
+
+  file.create(token_path)
+
+  cat(paste0(response_token, "\n"), file = token_path)
+
   Sys.setenv(rainer_token = response_token)
 
   invisible(TRUE)

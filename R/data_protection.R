@@ -14,13 +14,21 @@ data_protection <- function() {
 
   if(tolower(response_data) == "y"){
 
+    dataprot_path <- file.path(R.home("etc"), "rainer_dataprot")
+
+    file.create(dataprot_path)
+
+    cat("TRUE \n", file = dataprot_path)
+
     Sys.setenv(rainer_dataprot = TRUE)
 
     invisible(TRUE)
 
     cat("Thank you for accepting the data protection regulations. \n")
   } else if(tolower(response_data) == "n") {
-    #stop loading
+
+    stop("The package can just be used if you understand and accept the data protection regulations. Loading the package has been stopped.")
+
   } else {
     cat("Please write just the letter y or n in the console to indicate if you understood and accept the data protection regulations.")
     return(data_protection())

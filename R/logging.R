@@ -6,41 +6,26 @@
 
 
 logging <- function() {
-  cat("In order to evaluate the package and gain insights in what students struggle with when using R, we'd like to log the responses. That means that we would like to store the error message occured as well as the information of the currently loaded document (e.g., script, R-Markdown-Document, ...). The storage will be anonymously without the possibility for indentification. \n")
-  cat("The consent to logging is completely voluntary. If you decline the logging, you do not have any disadvantage. You can use the package normally without any limitations. \n")
-  cat("You can withdraw your consent at every time by using the code rainer:::logging(). Additionally, you can contact one of our project members via XXX@XXX.de. \n")
-  cat("Please write 'y' if you consent to logging or 'n' if not in the console.")
+  cat("In order to evaluate the package and gain insights in what students struggle with when using R, we'd like to log the responses.
+  That means that we would like to store the error message occured as well as the information of the currently loaded document
+  (e.g., script, R-Markdown-Document, ...). \n
+  The storage will be anonymously without the possibility for indentification.
+  The consent to logging is completely voluntary. If you decline the logging, you do not have any disadvantage.
+  You can use the package normally without any limitations. \n
+  You can withdraw your consent at every time by using the code rainer:::logging(). Additionally, you can contact one of
+  our project members via XXX@XXX.de. \n")
 
-  response_log <- readline()
+  response_log <- utils::askYesNo(msg = "Do you consent to logging a part of your query?", default = TRUE)
 
-  if(tolower(response_log) == "y") {
+  if(response_log) {
 
-    logging_path <- file.path(R.home("etc"), "rainer_logging")
-
-    file.create(logging_path)
-
-    cat("TRUE \n", file = logging_path)
-
-    Sys.setenv(rainer_logging = TRUE)
-
-    invisible(TRUE)
+    .set_config(setting = "rainer_logging", content = TRUE)
 
     cat("Thank you for accepting the logging and making it possible to further develop RAINER. \n")
-  } else if(tolower(response_log) == "n") {
+  } else {
 
-    logging_path <- file.path(R.home("etc"), "rainer_logging")
-
-    file.create(logging_path)
-
-    cat("FALSE \n", file = logging_path)
-
-    Sys.setenv(rainer_logging = FALSE)
-
-    invisible(TRUE)
+    .set_config(setting = "rainer_logging", content = FALSE)
 
     cat("Your quieries will not be logged. \n")
-  } else {
-    cat("Please write either the letter y or the letter n in the console.")
-    return(logging())
   }
 }

@@ -2,15 +2,10 @@
 
 devtools::load_all()
 
-rainer:::language()
-
 Sys.unsetenv("rainer_language")
 Sys.unsetenv("rainer_dataprot")
 Sys.unsetenv("rainer_token")
 Sys.unsetenv("rainer_log")
-
-r_export("test")
-
 
 a 378 + 983
 b <- 3784*3-5

@@ -31,8 +31,9 @@ call_github_api <- function(body) {
   response <- httr::POST(
     url,
     httr::add_headers(
-      `api-key` = token, #client and api_key defined in the functions rerror etc.
-      `Content-Type` = "application/json"
+      `api-key` = token,
+      `Content-Type` = "application/json",
+      `x-ms-model-mesh-model-name` = client$model_name
     ),
     body = jsonlite::toJSON(body, auto_unbox = TRUE),
     encode = "json"

@@ -4,39 +4,49 @@
 #'
 #' @param question The individual question/prompt which GPT is supposed to answer.
 #' @param error Logical. If TRUE, adds the last error message to the output. FALSE per default.
-#' @param language Language the response is supposed to be in. Default is the system language.
 #' @return Response
 #' @export
 
-r_explain <- function(question = "The code does not yield the result I intended. Please explain what the problem might be.", error = FALSE, language = NULL) { #default question
+r_explain <- function(question = "The code does not yield the result I intended. Please explain what the problem might be.", error = FALSE) { #default question
 
   # Getting the session of the student
   environment <- environment_info(error)
 
-  # defining the language of the prompt
-  if(!is.null(language)) {
-    language <- tolower(language)
+  # building the message
+
+  if(Sys.getenv("rainer_language") == "english") {
+
+    body <- list(
+      messages = list(
+        list(role = "system", content = "You are helping students in an R programming course for beginners
+                                      and give feedback on what is wrong, how to correct it and how to improve in the future."),
+        list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
+                                            jsonlite::toJSON(environment, auto_unbox = TRUE),
+                                            "Answer my following question in maximum 3 sentences: \n",
+                                            question))),
+      max_tokens = 200
+    )
+  } else if(Sys.getenv("rainer_language") == "german") {
+
+    body <- list(
+      messages = list(
+        list(role = "system", content = "Du hilfst Studierenden in einem R Programmierkurs fuer Anfaenger und gibst Feedback was falsch sein koennte und wie sie sich verbessern koennen."),
+        list(role = "user", content = paste("Du bekommst folgende Informationen ueber meine aktuelle Arbeit in R \n",
+                                            jsonlite::toJSON(environment, auto_unbox = TRUE),
+                                            "Beantworte meine folgende Frage in maximal drei Saetzen: \n",
+                                            question))),
+      max_tokens = 200
+    )
   } else {
-    language <- get_language()
+    language()
+    stop("Please start the function r_error() again since no language was saved previously.")
   }
 
-  # building the message
-  body <- list(
-    messages = list(
-      list(role = "system", content = "You are helping students in an R programming course for beginners
-                                      and give feedback on what is wrong, how to correct it and how to improve in the future."),
-      list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
-                                          jsonlite::toJSON(environment, auto_unbox = TRUE),
-                                          "Answer my following question in maximum 3 sentences: \n",
-                                          question, "Answer in ", language))),
-    max_tokens = 200
-  )
-
   # formatting the response
-  response_json <- call_azure_api(body = body)
-  content_vector <- response_json$choices$message.content
+  response_json <- call_github_api(body = body)
+  content_vector <- response_json$choices[[1]][["message"]][["content"]]
 
-  #printing the response
+  # printing the response
   cat(content_vector)
 
 }

@@ -37,12 +37,12 @@ r_error <- function(error = TRUE) {
   } else {
     language()
 
-    return("Please start the function r_error() again since no language was saved previously.")
+    stop("Please start the function r_error() again since no language was saved previously.")
   }
 
   # formatting the response
   response_json <- call_github_api(body = body)
-  content_vector <- response_json$choices$message.content
+  content_vector <- response_json$choices[[1]][["message"]][["content"]]
 
   # printing the response
   cat(content_vector)

@@ -4,12 +4,10 @@
 \alias{r_improve}
 \title{Function to get improvement suggestions}
 \usage{
-r_improve(error = FALSE, language = NULL)
+r_improve(error = FALSE)
 }
 \arguments{
 \item{error}{Logical. If TRUE, adds the last error message to the output. FALSE per default.}
-
-\item{language}{The language the response is supposed to be in. Default is the system language.}
 }
 \value{
 Response

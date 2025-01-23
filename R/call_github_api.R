@@ -7,7 +7,7 @@
 
 call_github_api <- function(body) {
 
-  # Azure Client
+  # GitHub Client
   client <- list(
     endpoint = "https://models.inference.ai.azure.com",
     model_name = "gpt-4o"
@@ -27,29 +27,28 @@ call_github_api <- function(body) {
     token <- Sys.getenv("rainer_token")
   }
 
-  # POST request to API
-  response <- httr::POST(
-    url,
-    httr::add_headers(
+  # request to API
+  req <- httr2::request(url) |>
+    httr2::req_body_json(body) |>
+    httr2::req_headers(
       `api-key` = token,
       `Content-Type` = "application/json",
       `x-ms-model-mesh-model-name` = client$model_name
-    ),
-    body = jsonlite::toJSON(body, auto_unbox = TRUE),
-    encode = "json"
-  )
+    )
+
+    response <- httr2::req_perform(req)
 
   # Print response for debugging, just activate it with removing the #
   #cat("Response status:", status_code(response), "\n")
   #cat("Response content:", content(response, "text"), "\n")
 
   # Check if request was successful
-  if (httr::status_code(response) == 200) {
+  if (httr2::resp_status(response) == 200) {
 
-    return(jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten = TRUE))
+    return(httr2::resp_body_json(response))
 
   } else {
-    stop("API request failed with status: ", httr::status_code(response), "\n", httr::content(response, "text", encoding = "UTF-8"))
+    stop("API request failed with status: ", httr2::resp_status(response), "\n", httr2::resp_body_string(response))
   }
 
 }

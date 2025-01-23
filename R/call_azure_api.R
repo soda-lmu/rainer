@@ -21,26 +21,25 @@ call_azure_api <- function(body) {
   # Print URL for debugging, just activate it with removing the #
   #cat("URL:", url, "\n")
 
-  # POST request to API
-  response <- httr::POST(
-    url,
-    httr::add_headers(
-      `api-key` = client$api_key, #client and api_key defined in the functions rerror etc.
+  # Request to API
+  req <- httr2::request(url) |>
+    httr2::req_body_json(body) |>
+    httr2::req_headers(
+      `api-key` = client$api_key,
       `Content-Type` = "application/json"
-    ),
-    body = jsonlite::toJSON(body, auto_unbox = TRUE),
-    encode = "json"
-  )
+    )
+
+  response <- httr2::req_perform(req)
 
   # Print response for debugging, just activate it with removing the #
   #cat("Response status:", status_code(response), "\n")
   #cat("Response content:", content(response, "text"), "\n")
 
   # Check if request was successful
-  if (httr::status_code(response) == 200) {
-    return(jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten = TRUE))
+  if (httr2::resp_status(response) == 200) {
+    return(httr2::resp_body_json(response))
   } else {
-    stop("API request failed with status: ", httr::status_code(response), "\n", httr::content(response, "text", encoding = "UTF-8"))
+    stop("API request failed with status: ", httr2::resp_status(response), "\n", httr2::resp_body_string(response))
   }
 
 }

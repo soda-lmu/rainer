@@ -7,6 +7,8 @@ Sys.unsetenv("rainer_dataprot")
 Sys.unsetenv("rainer_token")
 Sys.unsetenv("rainer_log")
 
+data = mtcars
+
 a 378 + 983
 b <- 3784*3-5
 c <- 3897/19

@@ -7,9 +7,9 @@
 
 environment_info <- function(error = TRUE) {
   info <- list(
-    current_script = try(rstudioapi::getSourceEditorContext()$contents),
+    script = current_script(),
     objects = environment_objects(),
-    data_header = header(),
+    datastructure = header(),
     packages = list(loadedNamespaces())
   )
 

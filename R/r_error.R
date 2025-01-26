@@ -20,7 +20,7 @@ r_error <- function(error = TRUE) {
 
       list(role = "user", content = paste("You got the following information on the current state of my work in R:",
                                           jsonlite::toJSON(environment, auto_unbox = TRUE),
-                                          "Analyze the information provided step by step and afterwards give feedback on how to correct the issue mentioned in the error message in maximum three sentences."))),
+                                          "Analyze the information provided step by step and afterwards give feedback on how to correct the issue mentioned in the error message in maximum three sentences. Provide line numbers."))),
     max_tokens = 200
   )
   } else if(Sys.getenv("rainer_language") == "german"){

@@ -27,9 +27,19 @@
   if (!file.exists(.file_path(setting))) {
 
     logging()
+
+    if(Sys.getenv("rainer_logging") == TRUE) {
+
+      log_initialize()
+    }
   } else {
 
     .get_config(setting)
+
+    if(Sys.getenv("rainer_logging") == TRUE) {
+
+      log_initialize()
+    }
   }
 
   setting <- "rainer_token"

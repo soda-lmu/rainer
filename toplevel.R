@@ -6,6 +6,7 @@ Sys.unsetenv("rainer_language")
 Sys.unsetenv("rainer_dataprot")
 Sys.unsetenv("rainer_token")
 Sys.unsetenv("rainer_log")
+Sys.unsetenv("sessionId")
 
 data = mtcars
 

@@ -44,5 +44,9 @@ r_improve <- function(error = FALSE) {
   # printing the response
   cat(content_vector)
 
+  if (Sys.getenv("rainer_logging") == TRUE) {
+    log_post(name = "r_improve", error = error)
+  }
+
 }
 

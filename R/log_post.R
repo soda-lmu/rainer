@@ -10,14 +10,16 @@
 
 log_post <- function(name, error) {
 
+  if(Sys.getenv("rainer_logging") == TRUE) {
+
   # defining the url
   url <- "https://demo.worldwidelab.org/v1/response"
 
   if (Sys.getenv("sessionId") == ""){
     log_initialize()
-  }
+    }
 
-  sessionId <- Sys.getenv("sessionId")
+  sessionId <- Sys.getenv("rainer_wwl_sessionId")
 
   environment_r <- environment_info(error)
 
@@ -25,9 +27,15 @@ log_post <- function(name, error) {
                           error_message = environment_r$error_message)
 
   # request to API
-  httr2::request(url) |>
-    httr2::req_body_json(list(sessionId = sessionId, name = name, payload = environment_log)) |>
-    httr2::req_perform_promise()
+  invisible(
+    tryCatch(
+      httr2::request(url) |>
+        httr2::req_body_json(list(sessionId = sessionId, name = name, payload = environment_log)) |>
+        httr2::req_perform_promise()
+    )
+  )
+
+  }
 
 }
 

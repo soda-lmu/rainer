@@ -20,7 +20,7 @@ log_initialize <- function() {
     (\(resp) {
       json_data <- httr2::resp_body_json(resp)
       sessionId <- json_data$sessionId
-      Sys.setenv("sessionId" = sessionId)
+      Sys.setenv("rainer_wwl_sessionId" = sessionId)
     })() %...!%
     (\(err) message("Error: ", err$message))
 

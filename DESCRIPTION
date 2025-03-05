@@ -9,11 +9,12 @@ Authors@R: c(
     person("Malte", "Schierholz", role = "aut"),
     person("Markus", "Herklotz", role = "aut")
     )
-Description: RAINER provides explanations for error messages and outputs, which do not yield the desired results, with a GPT-model. 
+Description: RAINER provides explanations for error messages and outputs, which do not yield the desired results, with a GPT-model.
     Based on your current environment in R, a GPT suggestion of what is wrong, why it is wrong, and how to improve is given.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: jsonlite, rstudioapi, httr2, utils, stats, tools, promises
-URL: https://soda-lmu.github.io/rainer/
+URL: https://soda-lmu.github.io/rainer/, https://github.com/soda-lmu/rainer
+BugReports: https://github.com/soda-lmu/rainer/issues

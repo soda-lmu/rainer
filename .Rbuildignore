@@ -3,3 +3,6 @@
 ^LICENSE\.md$
 ^.github
 ^toplevel.R$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

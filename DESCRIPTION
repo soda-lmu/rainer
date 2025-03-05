@@ -1,10 +1,16 @@
 Package: rainer
 Title: R Assistant IN Error Resolution
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Niklas", "Ippisch", , "niklas.ippisch@outlook.de", role = c("cre", "aut")),
+    person("Jan", "Simson", role = "aut"),
+    person("Jacob", "Beck", role = "aut"),
+    person("Anna-Carolina", "Haensch", role = "aut"),
+    person("Malte", "Schierholz", role = "aut"),
+    person("Markus", "Herklotz", role = "aut")
+    )
+Description: RAINER provides explanations for error messages and outputs, which do not yield the desired results, with a GPT-model. 
+    Based on your current environment in R, a GPT suggestion of what is wrong, why it is wrong, and how to improve is given.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

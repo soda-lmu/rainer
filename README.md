@@ -2,7 +2,7 @@
 
 Welcome to RAINER - your new best friend in R.
 
-RAINER provides explanations for error messages, outputs not yielding your intended results and suggestions for improvements of your script based on an LLM. To do that, RAINER sends your current state of the work in R to a GPT model by using the possibility to access GPT-4o through GitHub.
+RAINER provides explanations for error messages, outputs not matching your intended results and suggestions for improvements to your code. Using a large language model (LLM), it examines the current state of your workspace and code to troubleshoot your problem.
 
 ## Overview
 
@@ -25,7 +25,7 @@ remotes::install_github("soda-lmu/rainer")
 
 ## Getting Started
 
-When you load RAINER for the first time, you will be guided through the setup process. RAINER will ask you for input on the following questions and will store your response, so you only have to answer them once. More detailed information on the questions can be found below.
+When you load RAINER for the first time, you will be guided through the setup process. RAINER will ask you for input on the following questions and will store your response on your computer, so you only have to answer them once. More detailed information on the questions can be found below.
 
 - Accepting the data protection regulations
 - Your GitHub token (see below on how you can get one)
@@ -36,7 +36,7 @@ If you want to change your response to any of these questions later on, you can 
 
 ### Getting your GitHub token
 
-With a GitHub token you can access LLMs free of charge (see for more information: https://docs.github.com/en/github-models). Therefore, you need a personal GitHub token, which you can create by following these steps:
+With a GitHub token you can access LLMs free of charge through [GitHub Models](https://docs.github.com/en/github-models). As RAINER uses these, you will need a personal GitHub token, which you can create by following these steps:
 
 1. Go to the GitHub page for managing your tokens: <https://github.com/settings/tokens>
 2. Make sure you selected 'Tokens (classic)' on the left
@@ -48,7 +48,7 @@ After the expiration date, the token (and RAINER) will stop working and you will
 
 ## Data protection
 
-Access to the LLM is provided by GitHub. Hence, the usage of RAINER's functions is an interaction between the user and GitHub (see for GitHub's data protection regulations: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). The following data of your R environment are included in the query:
+Access to the LLM is provided by GitHub. Hence, the usage of RAINER's functions is an interaction between the user and GitHub (see [GitHub's data protection regulations](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)). The following data of your R environment are included in the query:
 
 - The currently opened document (e.g. script, R-markdown-document, ...)
 - The structure of all loaded datasets (no data are sent, just the variable names)

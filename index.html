@@ -49,7 +49,7 @@
 <div class="page-header"><h1 id="rainer---r-assistant-in-error-resolution">RAINER - R Assistant IN Error Resolution<a class="anchor" aria-label="anchor" href="#rainer---r-assistant-in-error-resolution"></a>
 </h1></div>
 <p>Welcome to RAINER - your new best friend in R.</p>
-<p>RAINER provides explanations for error messages, outputs not yielding your intended results and suggestions for improvements of your script based on an LLM. To do that, RAINER sends your current state of the work in R to a GPT model by using the possibility to access GPT-4o through GitHub.</p>
+<p>RAINER provides explanations for error messages, outputs not matching your intended results and suggestions for improvements to your code. Using a large language model (LLM), it examines the current state of your workspace and code to troubleshoot your problem.</p>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
@@ -78,7 +78,7 @@
 <div class="section level2">
 <h2 id="getting-started">Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
 </h2>
-<p>When you load RAINER for the first time, you will be guided through the setup process. RAINER will ask you for input on the following questions and will store your response, so you only have to answer them once. More detailed information on the questions can be found below.</p>
+<p>When you load RAINER for the first time, you will be guided through the setup process. RAINER will ask you for input on the following questions and will store your response on your computer, so you only have to answer them once. More detailed information on the questions can be found below.</p>
 <ul>
 <li>Accepting the data protection regulations</li>
 <li>Your GitHub token (see below on how you can get one)</li>
@@ -89,7 +89,7 @@
 <div class="section level3">
 <h3 id="getting-your-github-token">Getting your GitHub token<a class="anchor" aria-label="anchor" href="#getting-your-github-token"></a>
 </h3>
-<p>With a GitHub token you can access LLMs free of charge (see for more information: <a href="https://docs.github.com/en/github-models" class="external-link uri">https://docs.github.com/en/github-models</a>). Therefore, you need a personal GitHub token, which you can create by following these steps:</p>
+<p>With a GitHub token you can access LLMs free of charge through <a href="https://docs.github.com/en/github-models" class="external-link">GitHub Models</a>. As RAINER uses these, you will need a personal GitHub token, which you can create by following these steps:</p>
 <ol style="list-style-type: decimal">
 <li>Go to the GitHub page for managing your tokens: <a href="https://github.com/settings/tokens" class="external-link uri">https://github.com/settings/tokens</a>
 </li>
@@ -104,7 +104,7 @@
 <div class="section level2">
 <h2 id="data-protection">Data protection<a class="anchor" aria-label="anchor" href="#data-protection"></a>
 </h2>
-<p>Access to the LLM is provided by GitHub. Hence, the usage of RAINER’s functions is an interaction between the user and GitHub (see for GitHub’s data protection regulations: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="external-link uri">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a>). The following data of your R environment are included in the query:</p>
+<p>Access to the LLM is provided by GitHub. Hence, the usage of RAINER’s functions is an interaction between the user and GitHub (see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="external-link">GitHub’s data protection regulations</a>). The following data of your R environment are included in the query:</p>
 <ul>
 <li>The currently opened document (e.g. script, R-markdown-document, …)</li>
 <li>The structure of all loaded datasets (no data are sent, just the variable names)</li>

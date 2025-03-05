@@ -1,4 +1,4 @@
-# RAINER - R Assistant IN Error Resolution 
+# RAINER: The R Assistant IN Error Resolution 
 
 Welcome to RAINER - your new best friend in R.
 

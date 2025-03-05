@@ -13,7 +13,11 @@ RAINER provides explanations for error messages, outputs not yielding your inten
 
 ## Installation
 
-RAINER is currently not available on CRAN (yet). To install the package, use `remotes::install_github("soda-lmu/rainer")` (importantly, the `remotes` package needs to be installed first, if not existing already, with `install.packages("remotes")`). 
+RAINER is currently not available on CRAN (yet). To install the package, use the command below (importantly, the `remotes` package needs to be installed first, if not existing already, with `install.packages("remotes")`).
+
+```r
+remotes::install_github("soda-lmu/rainer")
+```
 
 ## Getting started
 

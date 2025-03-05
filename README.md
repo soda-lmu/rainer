@@ -13,44 +13,55 @@ RAINER provides explanations for error messages, outputs not yielding your inten
 
 ## Installation
 
-RAINER is currently not available on CRAN (yet). To install the package, use the command below (importantly, the `remotes` package needs to be installed first, if not existing already, with `install.packages("remotes")`).
+RAINER is currently not available on CRAN (yet), but can be installed directly from GitHub. To install the package, use the command below.
 
 ```r
+# If you have not installed it yet, install the remotes package first
+install.packages("remotes")
+
+# Install RAINER
 remotes::install_github("soda-lmu/rainer")
 ```
 
-## Getting started
+## Getting Started
 
-After installing RAINER and loading the package for the first time, four questions will pop up in the console which need to be answered before using the package. The answers will be saved in a local folder and are read when attaching RAINER in the future to avoid providing the information every time you load the package. These information are:
+When you load RAINER for the first time, you will be guided through the setup process. RAINER will ask you for input on the following questions and will store your response, so you only have to answer them once. More detailed information on the questions can be found below.
 
-- Acceptance of the data protection regulations of GitHub, which provides the access to the LLM (see below for more information)
-- The answer whether we're allowed to log a part of your queries in order to further develop RAINER (see below for more information)
-- Your GitHub token to access the LLM (see below for more information)
-- The prefered language of the responses (German or English)
+- Accepting the data protection regulations
+- Your GitHub token (see below on how you can get one)
+- Your preferred language (German 🇩🇪 or English 🇬🇧)
+- Whether or not the requests to RAINER can be logged (totally optional)
 
-If you want to change the information saved in the file, use the function `rainer:::dataprot()`, `rainer:::logging()`, `rainer:::github_token()`, or `rainer:::language()`.
+If you want to change your response to any of these questions later on, you can do so by using the following functions: `rainer:::dataprot()`, `rainer:::github_token()`, `rainer:::language()`, or `rainer:::logging()`.
 
-### Getting a GitHub token
+### Getting your GitHub token
 
 With a GitHub token you can access LLMs free of charge (see for more information: https://docs.github.com/en/github-models). Therefore, you need a personal GitHub token, which you can create by following these steps:
-1. Open the settings in GitHub (click on your profile in the upper right corner and select 'settings')
-2. Scroll down and choose 'developer settings' in the menu on the left
-3. Select 'Personal access tokens'
-4. Select 'Tokens (classic)'
-5. Click on 'create new token' in the upper right corner
-6. You can choose now the scopes (no scopes are necessary for accessing an LLM) and the expiration date. After expiration, the access (and RAINER) will not work anymore and a new token is required. You can provide a new token with `rainer:::github_token()`.
-7. Remember to directly copy your code after the creation since it cannot be accessed afterwards!
+
+1. Go to the GitHub page for managing your tokens: <https://github.com/settings/tokens>
+2. Make sure you selected 'Tokens (classic)' on the left
+3. Click on 'Generate new token' in the upper right corner
+4. Next, you need to choose the scopes for this token (what it's allowed to do) and the expiration date (when the token stops working). For using RAINER and accessing LLMs you do not need to select any of the scopes.
+5. Success, you created your token! 🎉 Now make sure to copy it into RAINER and check that it works, before closing the website.
+
+After the expiration date, the token (and RAINER) will stop working and you will need to create a new token. You can provide a new token to RAINER with `rainer:::github_token()`.
 
 ## Data protection
 
-The access to the LLM is provided by GitHub. Hence, the usage of RAINER's functions is an interaction between the user and GitHub (see for GitHub's data protection regulations: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). The following data of your R environment are included in the query:
+Access to the LLM is provided by GitHub. Hence, the usage of RAINER's functions is an interaction between the user and GitHub (see for GitHub's data protection regulations: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). The following data of your R environment are included in the query:
 
-- currently opened document (e.g. script, R-markdown-document, ...)
-- structure of all loaded datasets (no data are sent, just the variable names)
-- name and type of all other loaded entities (e.g. variables, functions, ...)
-- loaded packages
-- last error message
+- The currently opened document (e.g. script, R-markdown-document, ...)
+- The structure of all loaded datasets (no data are sent, just the variable names)
+- The name and type of all other loaded entities (e.g. variables, functions, ...)
+- The names of loaded packages
+- The last error message
 
 ## Further Development
 
-We developed RAINER in the first place to improve the start with R of students without or little prior programming experiences. To understand what students struggle with and to enhance the package including the prompts, we would like to save a part of your query when using RAINER. The logging contains the currently opened document (e.g. script, R-markdown-document, ...) and the error message connected with the query. These information are saved anonymously without the possibility of tracing back who sent the query. Acceptance of logging is voluntary and the package does work without accepting it, too. The acceptance can be withdrawn at any time with the function `rainer:::logging()` and choosing no. The stored queries will only be used in an academic context and will not be published or passed to other parties. In case of any questions, you may contact XXX (xxx@xxx.de). Thank you very much!
+We developed RAINER in the first place to improve the start with R of students without or little prior programming experiences. To understand what students struggle with and to enhance the package including the prompts, we would like to save a part of your query when using RAINER.
+
+The logged information contains the currently opened document (e.g. script, R-markdown-document, ...) and the error message connected with the query. This information is saved anonymously without the possibility of tracing back who sent the query.
+
+Acceptance of logging is voluntary and the package does work without accepting it, too. The acceptance can be withdrawn at any time with the function `rainer:::logging()` and choosing no.
+
+The stored queries will only be used in an academic context and will not be published or passed to other parties. In case of any questions, you may contact XXX (xxx@xxx.de). Thank you very much!

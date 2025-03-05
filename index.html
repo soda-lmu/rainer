@@ -37,6 +37,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/soda-lmu/rainer/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -66,44 +67,70 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>RAINER is currently not available on CRAN (yet). To install the package, use <code>remotes::install_github("soda-lmu/rainer")</code> (importantly, the <code>remotes</code> package needs to be installed first, if not existing already, with <code>install.packages("remotes")</code>).</p>
+<p>RAINER is currently not available on CRAN (yet), but can be installed directly from GitHub. To install the package, use the command below.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># If you have not installed it yet, install the remotes package first</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Install RAINER</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"soda-lmu/rainer"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
+<h2 id="getting-started">Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
 </h2>
-<p>After installing RAINER and loading the package for the first time, four questions will pop up in the console which need to be answered before using the package. The answers will be saved in a local folder and are read when attaching RAINER in the future to avoid providing the information every time you load the package. These information are:</p>
+<p>When you load RAINER for the first time, you will be guided through the setup process. RAINER will ask you for input on the following questions and will store your response, so you only have to answer them once. More detailed information on the questions can be found below.</p>
 <ul>
-<li>Acceptance of the data protection regulations of GitHub, which provides the access to the LLM (see below for more information)</li>
-<li>The answer whether we’re allowed to log a part of your queries in order to further develop RAINER (see below for more information)</li>
-<li>Your GitHub token to access the LLM (see below for more information)</li>
-<li>The prefered language of the responses (German or English)</li>
+<li>Accepting the data protection regulations</li>
+<li>Your GitHub token (see below on how you can get one)</li>
+<li>Your preferred language (German 🇩🇪 or English 🇬🇧)</li>
+<li>Whether or not the requests to RAINER can be logged (totally optional)</li>
 </ul>
-<p>If you want to change the information saved in the file, use the function <code>rainer:::dataprot()</code>, <code>rainer:::logging()</code>, <code>rainer:::github_token()</code>, or <code>rainer:::language()</code>.</p>
+<p>If you want to change your response to any of these questions later on, you can do so by using the following functions: <code>rainer:::dataprot()</code>, <code>rainer:::github_token()</code>, <code>rainer:::language()</code>, or <code>rainer:::logging()</code>.</p>
 <div class="section level3">
-<h3 id="getting-a-github-token">Getting a GitHub token<a class="anchor" aria-label="anchor" href="#getting-a-github-token"></a>
+<h3 id="getting-your-github-token">Getting your GitHub token<a class="anchor" aria-label="anchor" href="#getting-your-github-token"></a>
 </h3>
-<p>With a GitHub token you can access LLMs free of charge (see for more information: <a href="https://docs.github.com/en/github-models" class="external-link uri">https://docs.github.com/en/github-models</a>). Therefore, you need a personal GitHub token, which you can create by following these steps: 1. Open the settings in GitHub (click on your profile in the upper right corner and select ‘settings’) 2. Scroll down and choose ‘developer settings’ in the menu on the left 3. Select ‘Personal access tokens’ 4. Select ‘Tokens (classic)’ 5. Click on ‘create new token’ in the upper right corner 6. You can choose now the scopes (no scopes are necessary for accessing an LLM) and the expiration date. After expiration, the access (and RAINER) will not work anymore and a new token is required. You can provide a new token with <code>rainer:::github_token()</code>. 7. Remember to directly copy your code after the creation since it cannot be accessed afterwards!</p>
+<p>With a GitHub token you can access LLMs free of charge (see for more information: <a href="https://docs.github.com/en/github-models" class="external-link uri">https://docs.github.com/en/github-models</a>). Therefore, you need a personal GitHub token, which you can create by following these steps:</p>
+<ol style="list-style-type: decimal">
+<li>Go to the GitHub page for managing your tokens: <a href="https://github.com/settings/tokens" class="external-link uri">https://github.com/settings/tokens</a>
+</li>
+<li>Make sure you selected ‘Tokens (classic)’ on the left</li>
+<li>Click on ‘Generate new token’ in the upper right corner</li>
+<li>Next, you need to choose the scopes for this token (what it’s allowed to do) and the expiration date (when the token stops working). For using RAINER and accessing LLMs you do not need to select any of the scopes.</li>
+<li>Success, you created your token! 🎉 Now make sure to copy it into RAINER and check that it works, before closing the website.</li>
+</ol>
+<p>After the expiration date, the token (and RAINER) will stop working and you will need to create a new token. You can provide a new token to RAINER with <code>rainer:::github_token()</code>.</p>
 </div>
 </div>
 <div class="section level2">
 <h2 id="data-protection">Data protection<a class="anchor" aria-label="anchor" href="#data-protection"></a>
 </h2>
-<p>The access to the LLM is provided by GitHub. Hence, the usage of RAINER’s functions is an interaction between the user and GitHub (see for GitHub’s data protection regulations: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="external-link uri">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a>). The following data of your R environment are included in the query:</p>
+<p>Access to the LLM is provided by GitHub. Hence, the usage of RAINER’s functions is an interaction between the user and GitHub (see for GitHub’s data protection regulations: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="external-link uri">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a>). The following data of your R environment are included in the query:</p>
 <ul>
-<li>currently opened document (e.g. script, R-markdown-document, …)</li>
-<li>structure of all loaded datasets (no data are sent, just the variable names)</li>
-<li>name and type of all other loaded entities (e.g. variables, functions, …)</li>
-<li>loaded packages</li>
-<li>last error message</li>
+<li>The currently opened document (e.g. script, R-markdown-document, …)</li>
+<li>The structure of all loaded datasets (no data are sent, just the variable names)</li>
+<li>The name and type of all other loaded entities (e.g. variables, functions, …)</li>
+<li>The names of loaded packages</li>
+<li>The last error message</li>
 </ul>
 </div>
 <div class="section level2">
 <h2 id="further-development">Further Development<a class="anchor" aria-label="anchor" href="#further-development"></a>
 </h2>
-<p>We developed RAINER in the first place to improve the start with R of students without or little prior programming experiences. To understand what students struggle with and to enhance the package including the prompts, we would like to save a part of your query when using RAINER. The logging contains the currently opened document (e.g. script, R-markdown-document, …) and the error message connected with the query. These information are saved anonymously without the possibility of tracing back who sent the query. Acceptance of logging is voluntary and the package does work without accepting it, too. The acceptance can be withdrawn at any time with the function <code>rainer:::logging()</code> and choosing no. The stored queries will only be used in an academic context and will not be published or passed to other parties. In case of any questions, you may contact XXX (<a href="mailto:xxx@xxx.de" class="email">xxx@xxx.de</a>). Thank you very much!</p>
+<p>We developed RAINER in the first place to improve the start with R of students without or little prior programming experiences. To understand what students struggle with and to enhance the package including the prompts, we would like to save a part of your query when using RAINER.</p>
+<p>The logged information contains the currently opened document (e.g. script, R-markdown-document, …) and the error message connected with the query. This information is saved anonymously without the possibility of tracing back who sent the query.</p>
+<p>Acceptance of logging is voluntary and the package does work without accepting it, too. The acceptance can be withdrawn at any time with the function <code>rainer:::logging()</code> and choosing no.</p>
+<p>The stored queries will only be used in an academic context and will not be published or passed to other parties. In case of any questions, you may contact XXX (<a href="mailto:xxx@xxx.de" class="email">xxx@xxx.de</a>). Thank you very much!</p>
 </div>
 </div>
-  </main><aside class="col-md-3"><div class="license">
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/soda-lmu/rainer/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/soda-lmu/rainer/issues" class="external-link">Report a bug</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>

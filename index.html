@@ -48,20 +48,20 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="rainer-the-r-assistant-in-error-resolution">RAINER: The R Assistant IN Error Resolution<a class="anchor" aria-label="anchor" href="#rainer-the-r-assistant-in-error-resolution"></a>
 </h1></div>
-<p>Welcome to RAINER - your new best friend in R.</p>
-<p>RAINER provides explanations for error messages, outputs not matching your intended results and suggestions for improvements to your code. Using a large language model (LLM), it examines the current state of your workspace and code to troubleshoot your problem.</p>
+<p>Welcome to RAINER - your personal assistant for troubleshooting in R!</p>
+<p>RAINER helps you resolve errors, understand unexpected outputs, and improve your code using a large language model (LLM). It examines the current state of your workspace and code to provide individual explanations and suggestions.</p>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
 <ul>
 <li>
-<code><a href="reference/r_error.html">r_error()</a></code>: use that function to get an explanation what an error message means, why it occured and how to correct the issue</li>
+<code><a href="reference/r_error.html">r_error()</a></code>: Explains error messages, their causes, and how to fix them</li>
 <li>
-<code><a href="reference/r_activate.html">r_activate()</a></code>: use that function to automatically trigger <code><a href="reference/r_error.html">r_error()</a></code> always when an error message occurs</li>
+<code><a href="reference/r_activate.html">r_activate()</a></code>: Automatically triggers <code><a href="reference/r_error.html">r_error()</a></code> whenever an error occurs</li>
 <li>
-<code><a href="reference/r_explain.html">r_explain()</a></code>: use that function when an output (e.g. a table) does not yield the result you intended without throwing an error message</li>
+<code><a href="reference/r_explain.html">r_explain()</a></code>: Helps diagnose why an output (e.g., a table) differs from your expectations</li>
 <li>
-<code><a href="reference/r_improve.html">r_improve()</a></code>: use that function to get suggestions of how to improve your code</li>
+<code><a href="reference/r_improve.html">r_improve()</a></code>: Provides recommendations to enhance your code’s efficiency and clarity.</li>
 </ul>
 </div>
 <div class="section level2">
@@ -78,7 +78,7 @@
 <div class="section level2">
 <h2 id="getting-started">Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
 </h2>
-<p>When you load RAINER for the first time, you will be guided through the setup process. RAINER will ask you for input on the following questions and will store your response on your computer, so you only have to answer them once. More detailed information on the questions can be found below.</p>
+<p>When you load RAINER for the first time, you will be guided through the setup process. RAINER will prompt you to provide information, which will be securely stored on your computer, so you only have to answer them once. More detailed information on the questions can be found below.</p>
 <ul>
 <li>Accepting the data protection regulations</li>
 <li>Your GitHub token (see below on how you can get one)</li>
@@ -107,7 +107,7 @@
 <p>Access to the LLM is provided by GitHub. Hence, the usage of RAINER’s functions is an interaction between the user and GitHub (see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="external-link">GitHub’s data protection regulations</a>). The following data of your R environment are included in the query:</p>
 <ul>
 <li>The currently opened document (e.g. script, R-markdown-document, …)</li>
-<li>The structure of all loaded datasets (no data are sent, just the variable names)</li>
+<li>The structure of all loaded datasets (only variable names, not the data itself)</li>
 <li>The name and type of all other loaded entities (e.g. variables, functions, …)</li>
 <li>The names of loaded packages</li>
 <li>The last error message</li>
@@ -116,7 +116,7 @@
 <div class="section level2">
 <h2 id="further-development">Further Development<a class="anchor" aria-label="anchor" href="#further-development"></a>
 </h2>
-<p>We developed RAINER in the first place to improve the start with R of students without or little prior programming experiences. To understand what students struggle with and to enhance the package including the prompts, we would like to save a part of your query when using RAINER.</p>
+<p>RAINER was developed to help students with little or no prior programming experience in R. To improve the package, we would like to save a portion of queries for academic analysis.</p>
 <p>The logged information contains the currently opened document (e.g. script, R-markdown-document, …) and the error message connected with the query. This information is saved anonymously without the possibility of tracing back who sent the query.</p>
 <p>Acceptance of logging is voluntary and the package does work without accepting it, too. The acceptance can be withdrawn at any time with the function <code>rainer:::logging()</code> and choosing no.</p>
 <p>The stored queries will only be used in an academic context and will not be published or passed to other parties. In case of any questions, you may contact XXX (<a href="mailto:xxx@xxx.de" class="email">xxx@xxx.de</a>). Thank you very much!</p>

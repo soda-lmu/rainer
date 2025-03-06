@@ -1,15 +1,15 @@
 # RAINER: The R Assistant IN Error Resolution 
 
-Welcome to RAINER - your new best friend in R.
+Welcome to RAINER - your personal assistant for troubleshooting in R!
 
-RAINER provides explanations for error messages, outputs not matching your intended results and suggestions for improvements to your code. Using a large language model (LLM), it examines the current state of your workspace and code to troubleshoot your problem.
+RAINER helps you resolve errors, understand unexpected outputs, and improve your code using a large language model (LLM). It examines the current state of your workspace and code to provide individual explanations and suggestions.
 
 ## Overview
 
-- `r_error()`: use that function to get an explanation what an error message means, why it occured and how to correct the issue
-- `r_activate()`: use that function to automatically trigger `r_error()` always when an error message occurs
-- `r_explain()`: use that function when an output (e.g. a table) does not yield the result you intended without throwing an error message
-- `r_improve()`: use that function to get suggestions of how to improve your code
+- `r_error()`: Explains error messages, their causes, and how to fix them
+- `r_activate()`: Automatically triggers `r_error()` whenever an error occurs
+- `r_explain()`: Helps diagnose why an output (e.g., a table) differs from your expectations
+- `r_improve()`: Provides recommendations to enhance your code's efficiency and clarity.
 
 ## Installation
 
@@ -25,7 +25,7 @@ remotes::install_github("soda-lmu/rainer")
 
 ## Getting Started
 
-When you load RAINER for the first time, you will be guided through the setup process. RAINER will ask you for input on the following questions and will store your response on your computer, so you only have to answer them once. More detailed information on the questions can be found below.
+When you load RAINER for the first time, you will be guided through the setup process. RAINER will prompt you to provide information, which will be securely stored on your computer, so you only have to answer them once. More detailed information on the questions can be found below.
 
 - Accepting the data protection regulations
 - Your GitHub token (see below on how you can get one)
@@ -51,14 +51,14 @@ After the expiration date, the token (and RAINER) will stop working and you will
 Access to the LLM is provided by GitHub. Hence, the usage of RAINER's functions is an interaction between the user and GitHub (see [GitHub's data protection regulations](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)). The following data of your R environment are included in the query:
 
 - The currently opened document (e.g. script, R-markdown-document, ...)
-- The structure of all loaded datasets (no data are sent, just the variable names)
+- The structure of all loaded datasets (only variable names, not the data itself)
 - The name and type of all other loaded entities (e.g. variables, functions, ...)
 - The names of loaded packages
 - The last error message
 
 ## Further Development
 
-We developed RAINER in the first place to improve the start with R of students without or little prior programming experiences. To understand what students struggle with and to enhance the package including the prompts, we would like to save a part of your query when using RAINER.
+RAINER was developed to help students with little or no prior programming experience in R. To improve the package, we would like to save a portion of queries for academic analysis.
 
 The logged information contains the currently opened document (e.g. script, R-markdown-document, ...) and the error message connected with the query. This information is saved anonymously without the possibility of tracing back who sent the query.
 

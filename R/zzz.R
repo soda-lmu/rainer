@@ -22,26 +22,6 @@
     .get_config(setting)
   }
 
-  setting <- "rainer_logging"
-
-  if (!file.exists(.file_path(setting))) {
-
-    logging()
-
-    if(Sys.getenv("rainer_logging") == TRUE) {
-
-      log_initialize()
-    }
-  } else {
-
-    .get_config(setting)
-
-    if(Sys.getenv("rainer_logging") == TRUE) {
-
-      log_initialize()
-    }
-  }
-
   setting <- "rainer_token"
 
   if (!file.exists(.file_path(setting))) {
@@ -62,7 +42,27 @@
     .get_config(setting)
   }
 
-    m2 <- "RAINER is now ready for helping you!"
+  setting <- "rainer_logging"
+
+  if (!file.exists(.file_path(setting))) {
+
+    logging()
+
+    if(Sys.getenv("rainer_logging") == TRUE) {
+
+      log_initialize()
+    }
+  } else {
+
+    .get_config(setting)
+
+    if(Sys.getenv("rainer_logging") == TRUE) {
+
+      log_initialize()
+    }
+  }
+
+    m2 <- "Rainer is ready to assist you!"
     packageStartupMessage(m2)
 }
 

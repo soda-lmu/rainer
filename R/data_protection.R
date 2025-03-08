@@ -12,11 +12,12 @@ data_protection <- function() {
       -structure of the loaded dataset(s),
       -loaded variables and functions,
       -the loaded packages. \n
-      The access to the GPT-model is provided through GitHub. Hence, with using the functions provided with RAINER, you interact with GitHub. \n
-      You can access the data protection statements of GitHub with the following link:
-      https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement \n")
+      The access to the GPT-model is provided through GitHub. Hence, with using the functions provided with RAINER, you interact with GitHub.
+      \n")
+  cli::cli_text("You can access the data protection statements of GitHub with the following link:
+                {.url https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement")
 
-  response_data <- utils::askYesNo(msg = "Do you understand and accept the data protection regulations?", default = TRUE)
+  response_data <- utils::askYesNo(msg = "Do you understand and accept the data protection regulations?", default = FALSE)
 
   if(response_data){
 

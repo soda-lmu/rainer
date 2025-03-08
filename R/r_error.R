@@ -47,7 +47,7 @@ r_error <- function(error = TRUE) {
   # printing the response
   cat(content_vector)
 
-    log_post(name = "r_error", error = error)
+  log_post(name = "r_error", content = body)
 
 }
 

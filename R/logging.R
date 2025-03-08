@@ -15,7 +15,7 @@ logging <- function() {
   You can withdraw your consent at every time by using the code rainer:::logging(). Additionally, you can contact one of
   our project members via XXX@XXX.de. \n")
 
-  response_log <- utils::askYesNo(msg = "Do you consent to logging a part of your query?", default = TRUE)
+  response_log <- utils::askYesNo(msg = "Do you consent to logging a part of your query?", default = FALSE)
 
   if(response_log) {
 

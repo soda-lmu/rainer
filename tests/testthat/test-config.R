@@ -4,13 +4,13 @@ library(withr)
 test_that(".set_config correctly sets environment variables and creates files", {
   # Use local_envvar to temporarily modify environment variables
   # making sure that dataprot and token are not set
-  withr::local_envvar(
+  local_envvar(
     c(
       rainer_dataprot = NA,
       rainer_token = NA
     )
   )
-  temp_dir <- withr::local_tempdir()
+  temp_dir <- local_tempdir()
 
   # Mock R_user_dir to use our temporary directory
   local_mocked_bindings(
@@ -33,7 +33,7 @@ test_that(".set_config correctly sets environment variables and creates files", 
 })
 
 test_that(".set_config handles directory creation properly", {
-  temp_dir <- file.path(withr::local_tempdir(), "nested", "path")
+  temp_dir <- file.path(local_tempdir(), "nested", "path")
   local_mocked_bindings(
     R_user_dir = function(...) temp_dir,
     .package = "tools"
@@ -47,13 +47,13 @@ test_that(".set_config handles directory creation properly", {
 
 test_that(".get_config correctly reads files and sets environment variables", {
   # Use local_envvar to temporarily modify environment variables
-  withr::local_envvar(
+  local_envvar(
     c(
       rainer_dataprot = NA,
       rainer_token = NA
     )
   )
-  temp_dir <- withr::local_tempdir()
+  temp_dir <- local_tempdir()
 
   # Mock R_user_dir to use our temporary directory
   local_mocked_bindings(
@@ -79,7 +79,7 @@ test_that(".get_config correctly reads files and sets environment variables", {
 })
 
 test_that(".get_config errors when file doesn't exist", {
-  temp_dir <- withr::local_tempdir()
+  temp_dir <- local_tempdir()
 
   # Mock R_user_dir to use our temporary directory
   local_mocked_bindings(
@@ -93,12 +93,12 @@ test_that(".get_config errors when file doesn't exist", {
 
 test_that(".set_config and .get_config work together in sequence", {
   # Use local_envvar to temporarily modify environment variables
-  withr::local_envvar(
+  local_envvar(
     c(
       rainer_test_setting = NA
     )
   )
-  temp_dir <- withr::local_tempdir()
+  temp_dir <- local_tempdir()
 
   # Mock R_user_dir to use our temporary directory
   local_mocked_bindings(
@@ -112,7 +112,7 @@ test_that(".set_config and .get_config work together in sequence", {
   expect_equal(Sys.getenv("rainer_test_setting"), test_value)
 
   # Clear the environment variable to simulate a new R session
-  withr::local_envvar(c(rainer_test_setting = NA))
+  local_envvar(c(rainer_test_setting = NA))
   expect_equal(Sys.getenv("rainer_test_setting"), "")
 
   # Now retrieve the config

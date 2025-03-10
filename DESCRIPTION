@@ -19,5 +19,6 @@ Imports: jsonlite, rstudioapi, httr2, utils, stats, tools, promises, cli
 URL: https://soda-lmu.github.io/rainer/, https://github.com/soda-lmu/rainer
 BugReports: https://github.com/soda-lmu/rainer/issues
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Config/testthat/edition: 3

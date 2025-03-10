@@ -8,6 +8,9 @@
 #'
 
 .onAttach <- function(libname, pkgname) {
+  # Skip setup if running in pkgdown
+  # Code for check from https://github.com/r-lib/pkgdown/blob/main/R/pkgdown.R
+  if (identical(Sys.getenv("IN_PKGDOWN"), "true")) { return() }
 
   m1 <- "Loading RAINER and checking if all required variables are already existing ... \n"
   packageStartupMessage(m1)

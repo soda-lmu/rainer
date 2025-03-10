@@ -12,11 +12,24 @@ github_token <- function(){
   cat("You can always change the token you would like to use with the code rainer:::github_token(). \n")
   cat("Please now provide your token in the console:")
 
-  response_token <- readline()
+  valid_token <- FALSE
 
-  response_token <- sub("\\s+$", "", response_token)
+  while(!valid_token){
+    response_token <- readline()
 
-  .set_config(setting = "rainer_token", content = response_token)
+    response_token <- sub("\\s+$", "", response_token)
 
-  cat("Thank you for providing your token. \n")
+    if(github_token_validation(response_token)){
+
+      .set_config(setting = "rainer_token", content = response_token)
+
+      valid_token <- TRUE
+
+      cat("Thank you for providing your token. \n")
+
+    } else {
+      cat("The token provided is not valid. Please provide a valid token. \n")
+    }
+  }
+
 }

@@ -6,16 +6,15 @@
 #'
 
 data_protection <- function() {
-  cat("The RAINER package sends some of the information of your R environment to a GPT-model in order to provide individual feedback.
-      These information are: \n
-      -the current R document (Script, R-Markdown-Document, ...),
-      -structure of the loaded dataset(s),
-      -loaded variables and functions,
-      -the loaded packages. \n
-      The access to the GPT-model is provided through GitHub. Hence, with using the functions provided with RAINER, you interact with GitHub.
-      \n")
+  cat("Access to the LLM is provided by GitHub. Hence, the usage of RAINER's functions is an interaction between the user and GitHub. \n")
   cli::cli_text("You can access the data protection statements of GitHub with the following link:
-                {.url https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement")
+                {.url https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement}")
+  cat("The following data of your R environment are included in the query: \n
+  - The currently opened document (e.g. script, R-markdown-document, ...) \n
+  - The structure of all loaded datasets (only variable names, not the data itself) \n
+  - The name and type of all other loaded entities (e.g. variables, functions, ...) \n
+  - The names of loaded packages \n
+  - The last error message")
 
   response_data <- utils::askYesNo(msg = "Do you understand and accept the data protection regulations?", default = FALSE)
 

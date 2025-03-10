@@ -6,16 +6,20 @@
 
 
 logging <- function() {
-  cat("In order to evaluate the package and gain insights in what students struggle with when using R, we'd like to log the responses.
-  That means that we would like to store the error message occured as well as the information of the currently loaded document
-  (e.g., script, R-Markdown-Document, ...). \n
-  The storage will be anonymously without the possibility for indentification.
-  The consent to logging is completely voluntary. If you decline the logging, you do not have any disadvantage.
-  You can use the package normally without any limitations. \n
-  You can withdraw your consent at every time by using the code rainer:::logging(). Additionally, you can contact one of
-  our project members via XXX@XXX.de. \n")
+  cat("RAINER was developed to help students with little or no prior programming experience in R.
+  To improve the package, we would like to save a portion of queries for academic analysis. \n
 
-  response_log <- utils::askYesNo(msg = "Do you consent to logging a part of your query?", default = FALSE)
+  The logged information contains the same information as the prompt sent to GPT.
+  This information is saved anonymously without the possibility of tracing back who sent the query. \n
+
+  Acceptance of logging is voluntary and the package does work without accepting it, too.
+  The acceptance can be withdrawn at any time with the function `rainer:::logging()` and choosing no (as set per default). \n
+
+  The stored queries will only be used in an academic context and will only be published anonymized.
+  The data will be deleted as soon as they are not used anymore in an academic context.
+  In case of any questions, you may contact XXX (xxx@xxx.de). Thank you very much!")
+
+  response_log <- utils::askYesNo(msg = "Do you consent to logging your query?", default = FALSE)
 
   if(response_log) {
 

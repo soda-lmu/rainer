@@ -2,6 +2,7 @@
 #'
 #' This function checks whether the provided GitHub token is valid for accessing the LLMs and therefore for using rainer.
 #'
+#' @param response_token The token provided by the user which is about to be checked
 #' @return Nothing
 #'
 

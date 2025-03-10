@@ -4,12 +4,12 @@
 \alias{log_post}
 \title{Posting the logged response}
 \usage{
-log_post(name, error)
+log_post(name, content)
 }
 \arguments{
 \item{name}{name of the function which is to be logged}
 
-\item{error}{whether the error message is supposed to be included or not}
+\item{content}{content to be logged}
 }
 \value{
 Nothing

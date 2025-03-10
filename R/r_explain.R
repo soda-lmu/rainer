@@ -50,7 +50,7 @@ r_explain <- function(question = "The code does not yield the result I intended.
   cat(content_vector)
 
   if (Sys.getenv("rainer_logging") == TRUE) {
-    log_post(name = "r_explain", error = error)
+    log_post(name = "r_explain", content = body)
   }
 
 }

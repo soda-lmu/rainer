@@ -18,3 +18,6 @@ RoxygenNote: 7.3.2
 Imports: jsonlite, rstudioapi, httr2, utils, stats, tools, promises, cli
 URL: https://soda-lmu.github.io/rainer/, https://github.com/soda-lmu/rainer
 BugReports: https://github.com/soda-lmu/rainer/issues
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

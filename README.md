@@ -1,5 +1,9 @@
 # RAINER: The R Assistant IN Error Resolution 
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/soda-lmu/rainer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/soda-lmu/rainer/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
 Welcome to RAINER - your personal assistant for troubleshooting in R!
 
 RAINER helps you resolve errors, understand unexpected outputs, and improve your code using a large language model (LLM). It examines the current state of your workspace and code to provide individual explanations and suggestions.

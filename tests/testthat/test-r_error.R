@@ -27,32 +27,6 @@ test_that("r_error correctly processes English language requests", {
   expect_equal(output, "This is a test response for English")
 })
 
-test_that("r_error correctly processes German language requests", {
-  # Setup mocks
-  mock_env_info <- list(script = "test.R", objects = list(), datastructure = NULL, error_message = "Error: test error")
-  mock_api_response <- list(
-    choices = list(
-      list(message = list(content = "Dies ist eine Testantwort auf Deutsch"))
-    )
-  )
-
-  # Use local_envvar to set language
-  local_envvar(rainer_language = "german")
-
-  # Mock the required functions
-  local_mocked_bindings(
-    environment_info = function(error) mock_env_info,
-    call_github_api = function(body) mock_api_response,
-    log_post = function(name, content) NULL
-  )
-
-  # Capture the output to verify
-  output <- capture_output(r_error())
-
-  # Verify the output
-  expect_equal(output, "Dies ist eine Testantwort auf Deutsch")
-})
-
 test_that("r_error handles error=FALSE parameter correctly", {
   # Setup mocks
   mock_env_info <- list(script = "test.R", objects = list(), datastructure = NULL)

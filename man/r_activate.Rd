@@ -13,6 +13,6 @@ r_activate(switch = TRUE)
 Response
 }
 \description{
-This function enables r_error, the explanation of error message, automatically when an error message is
-visible.
+This function enables (or disables) r_error, the explanation of error message,
+automatically when an error message is visible.
 }

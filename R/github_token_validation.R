@@ -6,17 +6,19 @@
 #' @return Nothing
 #'
 
-github_token_validation <- function(response_token){
-
+github_token_validation <- function(response_token) {
   url <- "https://api.github.com/user"
 
-  response <- tryCatch({
-    httr2::request(url) |>
-      httr2::req_headers(Authorization = paste("token", response_token)) |>
-      httr2::req_perform()
-  }, error = function(e) {
-    return(NULL)
-  })
+  response <- tryCatch(
+    {
+      httr2::request(url) |>
+        httr2::req_headers(Authorization = paste("token", response_token)) |>
+        httr2::req_perform()
+    },
+    error = function(e) {
+      return(NULL)
+    }
+  )
 
   if (!is.null(response) && httr2::resp_status(response) == 200) {
     return(TRUE)

@@ -13,7 +13,7 @@ environment_info <- function(error = TRUE) {
     packages = list(loadedNamespaces())
   )
 
-  if(error) {
+  if (error) {
     info[["error_message"]] <- geterrmessage()
   }
 

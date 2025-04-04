@@ -8,14 +8,11 @@
 #' @export
 
 r_activate <- function(switch = TRUE) {
-  if(switch == TRUE) {
+  if (switch == TRUE) {
     options(error = function() r_error())
-  } else
-    if(switch == FALSE) {
-      options(error = NULL)
-    } else {
-        return("Please write 'TRUE' or 'FALSE' in the function.")
-      }
+  } else if (switch == FALSE) {
+    options(error = NULL)
+  } else {
+    return("Please write 'TRUE' or 'FALSE' in the function.")
+  }
 }
-
-

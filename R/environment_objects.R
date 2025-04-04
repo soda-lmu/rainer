@@ -4,13 +4,13 @@
 #'
 #' @return Nothing
 
-environment_objects = function(){
+environment_objects <- function() {
   # getting the objects in the environment
-  obj_names = ls(envir = .GlobalEnv)
+  obj_names <- ls(envir = .GlobalEnv)
 
   # function to label the objects
-  obj_info = sapply(obj_names, function(name) {
-    obj = get(name, envir = .GlobalEnv)
+  obj_info <- sapply(obj_names, function(name) {
+    obj <- get(name, envir = .GlobalEnv)
 
     if (is.function(obj)) {
       "function"

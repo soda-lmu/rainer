@@ -6,7 +6,6 @@
 #' @return Nothing
 
 call_github_api <- function(body) {
-
   # GitHub Client
   client <- list(
     endpoint = "https://models.inference.ai.azure.com",
@@ -17,9 +16,9 @@ call_github_api <- function(body) {
   url <- paste0(client$endpoint, "/openai/deployments/", client$model_name, "/chat/completions?api-version=2024-08-01-preview")
 
   # Print URL for debugging, just activate it with removing the #
-  #cat("URL:", url, "\n")
+  # cat("URL:", url, "\n")
 
-  if(Sys.getenv("rainer_token") == "") {
+  if (Sys.getenv("rainer_token") == "") {
     github_token()
 
     token <- Sys.getenv("rainer_token")
@@ -36,19 +35,16 @@ call_github_api <- function(body) {
       `x-ms-model-mesh-model-name` = client$model_name
     )
 
-    response <- httr2::req_perform(req)
+  response <- httr2::req_perform(req)
 
   # Print response for debugging, just activate it with removing the #
-  #cat("Response status:", status_code(response), "\n")
-  #cat("Response content:", content(response, "text"), "\n")
+  # cat("Response status:", status_code(response), "\n")
+  # cat("Response content:", content(response, "text"), "\n")
 
   # Check if request was successful
   if (httr2::resp_status(response) == 200) {
-
     return(httr2::resp_body_json(response))
-
   } else {
     stop("API request failed with status: ", httr2::resp_status(response), "\n", httr2::resp_body_string(response))
   }
-
 }

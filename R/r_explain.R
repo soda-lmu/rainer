@@ -7,34 +7,38 @@
 #' @return Response
 #' @export
 
-r_explain <- function(question = "The code does not yield the result I intended. Please explain what the problem might be.", error = FALSE) { #default question
+r_explain <- function(question = "The code does not yield the result I intended. Please explain what the problem might be.", error = FALSE) { # default question
 
   # Getting the session of the student
   environment <- environment_info(error)
 
   # building the message
 
-  if(Sys.getenv("rainer_language") == "english") {
-
+  if (Sys.getenv("rainer_language") == "english") {
     body <- list(
       messages = list(
         list(role = "system", content = "You are helping students in an R programming course for beginners
                                       and give feedback on what is wrong, how to correct it and how to improve in the future."),
-        list(role = "user", content = paste("You got the following information on the current state of my work in R: \n",
-                                            jsonlite::toJSON(environment, auto_unbox = TRUE),
-                                            "Answer my following question in maximum 3 sentences: \n",
-                                            question))),
+        list(role = "user", content = paste(
+          "You got the following information on the current state of my work in R: \n",
+          jsonlite::toJSON(environment, auto_unbox = TRUE),
+          "Answer my following question in maximum 3 sentences: \n",
+          question
+        ))
+      ),
       max_tokens = 200
     )
-  } else if(Sys.getenv("rainer_language") == "german") {
-
+  } else if (Sys.getenv("rainer_language") == "german") {
     body <- list(
       messages = list(
         list(role = "system", content = "Du hilfst Studierenden in einem R Programmierkurs fuer Anfaenger und gibst Feedback was falsch sein koennte und wie sie sich verbessern koennen."),
-        list(role = "user", content = paste("Du bekommst folgende Informationen ueber meine aktuelle Arbeit in R \n",
-                                            jsonlite::toJSON(environment, auto_unbox = TRUE),
-                                            "Beantworte meine folgende Frage in maximal drei Saetzen: \n",
-                                            question))),
+        list(role = "user", content = paste(
+          "Du bekommst folgende Informationen ueber meine aktuelle Arbeit in R \n",
+          jsonlite::toJSON(environment, auto_unbox = TRUE),
+          "Beantworte meine folgende Frage in maximal drei Saetzen: \n",
+          question
+        ))
+      ),
       max_tokens = 200
     )
   } else {
@@ -52,6 +56,4 @@ r_explain <- function(question = "The code does not yield the result I intended.
   if (Sys.getenv("rainer_logging") == TRUE) {
     log_post(name = "r_explain", content = body)
   }
-
 }
-

@@ -70,7 +70,9 @@ test_that("r_error handles no language setting correctly", {
   # Mock the required functions
   local_mocked_bindings(
     environment_info = function(error) mock_env_info,
-    language = function() { language_called <<- TRUE },
+    language = function() {
+      language_called <<- TRUE
+    },
     call_github_api = function(body) stop("Should not be called"),
     log_post = function(name, content) NULL
   )

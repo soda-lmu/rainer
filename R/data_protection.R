@@ -18,14 +18,11 @@ data_protection <- function() {
 
   response_data <- utils::askYesNo(msg = "Do you understand and accept the data protection regulations?", default = FALSE)
 
-  if(response_data){
-
+  if (response_data) {
     .set_config(setting = "rainer_dataprot", content = TRUE)
 
     cat("Thank you for accepting the data protection regulations. \n")
   } else {
-
     stop("The package can just be used if you understand and accept the data protection regulations. Loading the package has been stopped.")
-
   }
 }

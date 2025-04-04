@@ -21,13 +21,11 @@ logging <- function() {
 
   response_log <- utils::askYesNo(msg = "Do you consent to logging your query?", default = FALSE)
 
-  if(response_log) {
-
+  if (response_log) {
     .set_config(setting = "rainer_logging", content = TRUE)
 
     cat("Thank you for accepting the logging and making it possible to further develop RAINER. \n")
   } else {
-
     .set_config(setting = "rainer_logging", content = FALSE)
 
     cat("Your quieries will not be logged. \n")

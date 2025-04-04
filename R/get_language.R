@@ -8,10 +8,10 @@ get_language <- function() {
   # getting the system language
   sys_language_code <- Sys.getenv("LANG")
 
-  sys_language <- if(grepl("^de", sys_language_code)){
-    language = "german"
+  sys_language <- if (grepl("^de", sys_language_code)) {
+    language <- "german"
   } else {
-    language = "english"
+    language <- "english"
   }
 
   return(sys_language)

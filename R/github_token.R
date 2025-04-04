@@ -5,7 +5,7 @@
 #' @return Nothing
 #'
 
-github_token <- function(){
+github_token <- function() {
   cat("With using RAINER, some information and a prompt are sent to GPT. Free of charge access can be provided by a GitHub token.\n")
   cli::cli_text("You can get the token on Github directly {.url https://github.com/settings/tokens}")
   cat("In order to avoid asking you every time you load RAINER for a token, please provide your GitHub token by pasting it into the console without any symbols like '.")
@@ -14,22 +14,19 @@ github_token <- function(){
 
   valid_token <- FALSE
 
-  while(!valid_token){
+  while (!valid_token) {
     response_token <- readline()
 
     response_token <- sub("\\s+$", "", response_token)
 
-    if(github_token_validation(response_token)){
-
+    if (github_token_validation(response_token)) {
       .set_config(setting = "rainer_token", content = response_token)
 
       valid_token <- TRUE
 
       cat("Thank you for providing your token. \n")
-
     } else {
       cat("The token provided is not valid. Please provide a valid token. \n")
     }
   }
-
 }

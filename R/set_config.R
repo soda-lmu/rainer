@@ -7,8 +7,7 @@
 #' @return Nothing
 #'
 
-.set_config <- function(setting, content){
-
+.set_config <- function(setting, content) {
   config_path <- file.path(tools::R_user_dir("rainer", which = "data"))
 
   file_path <- file.path(config_path, setting)
@@ -20,5 +19,4 @@
   cat(paste0(content, "\n"), file = file_path)
 
   do.call(Sys.setenv, stats::setNames(list(content), setting))
-
 }

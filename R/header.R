@@ -12,9 +12,9 @@ header <- function() {
   dataframe_names <- names(obj_types)[obj_types == "dataframe"]
 
   # check if dataframe is loaded and return the structure if loaded and an error message if not
-  if(length(dataframe_names) == 0 | is.null(dataframe_names)) {
+  if (length(dataframe_names) == 0 | is.null(dataframe_names)) {
     return("No datasets loaded in the session")
-  } else{
+  } else {
     heads <- lapply(dataframe_names, function(name) {
       names(get(name, envir = .GlobalEnv))
     })

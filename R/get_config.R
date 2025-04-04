@@ -7,9 +7,7 @@
 #'
 
 .get_config <- function(setting) {
-
   file_path <- file.path(tools::R_user_dir("rainer", which = "data"), setting)
 
   do.call(Sys.setenv, stats::setNames(list(readLines(file_path)), setting))
-
 }

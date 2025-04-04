@@ -10,15 +10,13 @@ language <- function() {
 
   response_lan <- utils::askYesNo(msg = "Would you like the responses to be in English? If not, the responses will be in German", default = TRUE)
 
-  if(response_lan) {
-
+  if (response_lan) {
     .set_config(setting = "rainer_language", content = "english")
 
     cat("RAINER will respond in english. \n")
 
     invisible(TRUE)
   } else {
-
     .set_config(setting = "rainer_language", content = "german")
 
     cat("RAINER wird in Deutsch antworten. \n")

@@ -6,7 +6,6 @@
 #' @return Nothing
 
 call_azure_api <- function(body) {
-
   # Azure Client
   client <- list(
     azure_endpoint = "https://soda-oai-easyaccess-prod-swedencentral.openai.azure.com",
@@ -19,7 +18,7 @@ call_azure_api <- function(body) {
   url <- paste0(client$azure_endpoint, "/openai/deployments/", client$deployment_name, "/chat/completions?api-version=", client$api_version)
 
   # Print URL for debugging, just activate it with removing the #
-  #cat("URL:", url, "\n")
+  # cat("URL:", url, "\n")
 
   # Request to API
   req <- httr2::request(url) |>
@@ -32,8 +31,8 @@ call_azure_api <- function(body) {
   response <- httr2::req_perform(req)
 
   # Print response for debugging, just activate it with removing the #
-  #cat("Response status:", status_code(response), "\n")
-  #cat("Response content:", content(response, "text"), "\n")
+  # cat("Response status:", status_code(response), "\n")
+  # cat("Response content:", content(response, "text"), "\n")
 
   # Check if request was successful
   if (httr2::resp_status(response) == 200) {
@@ -41,5 +40,4 @@ call_azure_api <- function(body) {
   } else {
     stop("API request failed with status: ", httr2::resp_status(response), "\n", httr2::resp_body_string(response))
   }
-
 }

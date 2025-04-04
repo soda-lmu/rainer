@@ -7,7 +7,6 @@
 #'
 
 log_initialize <- function() {
-
   # defining the url
   url <- "https://demo.worldwidelab.org/v1/session"
 
@@ -23,6 +22,4 @@ log_initialize <- function() {
       Sys.setenv("rainer_wwl_sessionId" = sessionId)
     })() %...!%
     (\(err) message("Error: ", err$message))
-
 }
-

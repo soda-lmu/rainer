@@ -6,7 +6,6 @@
 #' @return Nothing
 #'
 
-.file_path <- function(setting){
-
+.file_path <- function(setting) {
   file_path <- file.path(tools::R_user_dir("rainer", which = "data"), setting)
 }

@@ -5,6 +5,6 @@
 #' @return Nothing
 #'
 
-r_error_addin <- function(){
+r_error_addin <- function() {
   rstudioapi::callFun("sendToConsole", "r_error()")
 }

@@ -14,9 +14,14 @@ test_that("r_error correctly processes English language requests", {
   local_envvar(rainer_language = "english")
 
   # Mock the required functions
+  body_received <- NULL
+
   local_mocked_bindings(
     environment_info = function(error) mock_env_info,
-    call_github_api = function(body) mock_api_response,
+    call_github_api = function(body) {
+      body_received <<- body
+      mock_api_response
+    },
     log_post = function(name, content) NULL
   )
 
@@ -25,6 +30,8 @@ test_that("r_error correctly processes English language requests", {
 
   # Verify the output
   expect_equal(output, "This is a test response for English")
+  expect_true(grepl("You are helping students", body_received$messages[[1]]$content))
+  expect_false(grepl("Du hilfst Studierenden", body_received$messages[[1]]$content))
 })
 
 test_that("r_error handles error=FALSE parameter correctly", {

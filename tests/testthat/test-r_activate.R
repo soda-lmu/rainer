@@ -43,7 +43,8 @@ test_that("r_activate returns message for invalid input", {
 test_that("r_activate works with explicit TRUE/FALSE values", {
   # Save the original error option
   with_options(
-    list(error = NULL), {
+    list(error = NULL),
+    {
       # Test with explicit TRUE
       r_activate(switch = TRUE)
       expect_true(is.call(getOption("error")))
@@ -52,7 +53,8 @@ test_that("r_activate works with explicit TRUE/FALSE values", {
 
   # Test with explicit FALSE
   with_options(
-    list(error = function() {}), {
+    list(error = function() {}),
+    {
       r_activate(switch = FALSE)
       expect_null(getOption("error"))
     }

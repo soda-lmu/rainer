@@ -10,4 +10,16 @@
   file_path <- file.path(tools::R_user_dir("rainer", which = "data"), setting)
 
   do.call(Sys.setenv, stats::setNames(list(readLines(file_path)), setting))
+
+  if(setting == "rainer_token") {
+    token <- Sys.getenv("rainer_token")
+
+    if(github_token_validation(token)){
+      cat("Your token is still valid. \n")
+    } else {
+      cat("Your token is not valid. Maybe, it has expired. Please provide a new token.")
+
+      github_token()
+    }
+  }
 }

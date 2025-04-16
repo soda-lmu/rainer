@@ -8,11 +8,13 @@
 
 log_initialize <- function() {
   # defining the url
-  url <- "https://demo.worldwidelab.org/v1/session"
+  rainer_wwl_endpoint <- "https://rainer-logging.soda-lab.org/"
+
+  url <- paste0(rainer_wwl_endpoint, "/v1/session")
 
   # request to API
   response_promise <- httr2::request(url) |>
-    httr2::req_body_json(list(studyId = "example")) |>
+    httr2::req_body_json(list(studyId = "testing")) |>
     httr2::req_perform_promise()
 
   response_promise %...>%

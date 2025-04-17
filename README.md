@@ -68,4 +68,4 @@ The logged information contains the same information as the prompt sent to GPT (
 
 Acceptance of logging is voluntary and the package does work without accepting it, too. The acceptance can be withdrawn at any time with the function `rainer:::logging()` and choosing no (as set per default).
 
-The stored queries will only be used in an academic context and will only be published anonymized. The data will be deleted as soon as they are not used anymore in an academic context. In case of any questions, you may contact XXX (xxx@xxx.de). Thank you very much!
+The stored queries will only be used in an academic context and will only be published anonymized. The data will be deleted as soon as they are not used anymore in an academic context. In case of any questions, please contact us (rainer@stat.uni-muenchen.de). Thank you very much!

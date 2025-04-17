@@ -6,6 +6,12 @@
 #'
 
 github_token <- function() {
+
+  if (!interactive()) {
+    warning("Skipping GitHub token prompt in non-interactive session.")
+    return(invisible(NULL))
+  }
+
   cat("With using RAINER, some information and a prompt are sent to GPT. Free of charge access can be provided by a GitHub token.\n")
   cli::cli_text("You can get the token on Github directly {.url https://github.com/settings/tokens}")
   cat("In order to avoid asking you every time you load RAINER for a token, please provide your GitHub token by pasting it into the console without any symbols like '.")

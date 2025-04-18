@@ -11,9 +11,11 @@
 log_post <- function(name, content) {
   if (Sys.getenv("rainer_logging") == TRUE) {
     # defining the url
-    url <- "https://demo.worldwidelab.org/v1/response"
+    rainer_wwl_endpoint <- "https://rainer-logging.soda-lab.org/"
 
-    if (Sys.getenv("sessionId") == "") {
+    url <- paste0(rainer_wwl_endpoint, "/v1/response")
+
+    if (Sys.getenv("rainer_wwl_sessionId") == "") {
       log_initialize()
     }
 

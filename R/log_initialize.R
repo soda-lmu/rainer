@@ -14,7 +14,7 @@ log_initialize <- function() {
 
   # request to API
   response_promise <- httr2::request(url) |>
-    httr2::req_body_json(list(studyId = "testing")) |>
+    httr2::req_body_json(list(studyId = "production")) |>
     httr2::req_perform_promise()
 
   response_promise %...>%

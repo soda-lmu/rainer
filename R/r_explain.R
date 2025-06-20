@@ -4,10 +4,29 @@
 #'
 #' @param question The individual question/prompt which GPT is supposed to answer.
 #' @param error Logical. If TRUE, adds the last error message to the output. FALSE per default.
+#' @param interactive_prompt Logical. If TRUE, the popup-window is usable (necessary for the testing environment).
 #' @return Response
 #' @export
 
-r_explain <- function(question = "The code does not yield the result I intended. Please explain what the problem might be.", error = FALSE) { # default question
+r_explain <- function(question = "The code does not yield the result I intended. Please explain what the problem might be.", # default question
+                      error = FALSE,
+                      interactive_prompt = TRUE) {
+
+  if (interactive_prompt && interactive() && rstudioapi::isAvailable()) {
+    user_input <- rstudioapi::showPrompt(
+      title = "What should be explained?",
+      message = "Please enter your question for the assistant:",
+      default = NULL
+    )
+
+    # If user cancels (returns NULL), exit
+    if (is.null(user_input)) return(invisible(NULL))
+
+    question <- user_input
+  }
+
+  thinks <- paste("RAINER thinks about your question: \n", question)
+  cat(thinks)
 
   # Getting the session of the student
   environment <- environment_info(error)

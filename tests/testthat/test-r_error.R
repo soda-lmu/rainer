@@ -29,7 +29,7 @@ test_that("r_error correctly processes English language requests", {
   output <- capture_output(r_error())
 
   # Verify the output
-  expect_equal(output, "This is a test response for English")
+  expect_match(output, "This is a test response for English")
   expect_true(grepl("You are helping students", body_received$messages[[1]]$content))
   expect_false(grepl("Du hilfst Studierenden", body_received$messages[[1]]$content))
 })

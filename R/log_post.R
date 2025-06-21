@@ -22,12 +22,12 @@ log_post <- function(name, content) {
     sessionId <- Sys.getenv("rainer_wwl_sessionId")
 
     # request to API
-    invisible(
-      tryCatch(
-        httr2::request(url) |>
-          httr2::req_body_json(list(sessionId = sessionId, name = name, payload = content)) |>
-          httr2::req_perform_promise()
+    httr2::request(url) |>
+      httr2::req_body_json(list(sessionId = sessionId, name = name, payload = content)) |>
+      httr2::req_perform_promise() |>
+      promises::then(
+        onFulfilled = function(resp) NULL,
+        onRejected = function(err) NULL  # suppress all errors silently
       )
-    )
   }
 }

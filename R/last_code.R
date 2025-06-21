@@ -4,9 +4,16 @@
 #'
 #' @return Nothing
 
-last_code <- function(){
+last_code <- function() {
+  if (!interactive()) return(NA_character_)
+
   fname <- tempfile()
-  utils::savehistory(fname)
-  code <- utils::tail(readLines(fname), n = 3)[1]
+  code <- tryCatch({
+    utils::savehistory(fname)
+    utils::tail(readLines(fname), n = 3)[1]
+  }, error = function(e) {
+    NA_character_
+  })
+
   return(code)
 }

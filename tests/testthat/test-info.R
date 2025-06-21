@@ -84,6 +84,7 @@ test_that("environment_info returns correctly structured information", {
 
   # Mock current_script to return a known value
   local_mocked_bindings(
+    last_code = function() "x <- 1 + 2",
     current_script = function() "Sample script content"
   )
 

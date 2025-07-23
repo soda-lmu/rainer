@@ -8,6 +8,9 @@ Welcome to RAINER - your personal assistant for troubleshooting in R!
 
 RAINER helps you resolve errors, understand unexpected outputs, and improve your code using a large language model (LLM). It examines the current state of your workspace and code to provide individual explanations and suggestions.
 
+### Example usage
+![Example](https://github.com/user-attachments/assets/4ed409d2-a618-4630-8817-15d49275571e)
+
 ## Overview
 
 - `r_error()`: Explains error messages, their causes, and how to fix them
@@ -29,7 +32,7 @@ remotes::install_github("soda-lmu/rainer")
 
 ## Getting Started
 
-When you load RAINER for the first time, you will be guided through the setup process. RAINER will prompt you to provide information, which will be securely stored on your computer, so you only have to answer them once. More detailed information on the questions can be found below.
+When you load RAINER for the first time, you will be guided through the setup process. RAINER will prompt you to provide information, which will be securely stored on your computer, so you only have to answer them once. More detailed information on the questions can be found below. Please also have a look at the [video](https://www.youtube.com/watch?v=C36iZVrkVtA) we recorded, walking you through the first setup incl. retrieving a GitHub token.
 
 - Accepting the data protection regulations
 - Your GitHub token (see below on how you can get one)

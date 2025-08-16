@@ -3,7 +3,6 @@
 #' This function gathers the last code snipped executed and is used internally.
 #'
 #' @return Nothing
-
 last_code <- function() {
   if (!interactive()) return(NA_character_)
 

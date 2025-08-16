@@ -25,8 +25,7 @@ r_explain <- function(question = "The code does not yield the result I intended.
     question <- user_input
   }
 
-  thinks <- paste("RAINER thinks about your question: \n", question)
-  cat(thinks)
+  cat("RAINER is thinking about your question: \n", question, "\n")
 
   # Getting the session of the student
   environment <- environment_info(error)

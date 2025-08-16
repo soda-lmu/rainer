@@ -17,7 +17,7 @@ logging <- function() {
 
   The stored queries will only be used in an academic context and will only be published anonymously.
   The data will be deleted as soon as they are not used anymore in an academic context.
-  In case of any questions, please contact us (rainer@stat.uni-muenchen.de). Thank you very much! ")
+  In case of any questions, please contact us (rainer@stat.uni-muenchen.de). Thank you very much!")
 
   response_log <- utils::askYesNo(msg = "Do you consent to logging your query?", default = FALSE)
 

@@ -84,6 +84,7 @@ test_that("environment_info returns correctly structured information", {
 
   # Mock current_script to return a known value
   local_mocked_bindings(
+    last_code = function() "x <- 1 + 2",
     current_script = function() "Sample script content"
   )
 
@@ -93,10 +94,10 @@ test_that("environment_info returns correctly structured information", {
 
   # Check the structure of the results
   expect_type(result_with_error, "list")
-  expect_named(result_with_error, c("script", "objects", "datastructure", "packages", "error_message"))
+  expect_named(result_with_error, c("last_executed_code", "script", "objects", "datastructure", "packages", "error_message"))
 
   expect_type(result_without_error, "list")
-  expect_named(result_without_error, c("script", "objects", "datastructure", "packages"))
+  expect_named(result_without_error, c("last_executed_code", "script", "objects", "datastructure", "packages"))
   expect_false("error_message" %in% names(result_without_error))
 
   # Check specific values

@@ -7,13 +7,16 @@
 r_explain(
   question =
     "The code does not yield the result I intended. Please explain what the problem might be.",
-  error = FALSE
+  error = FALSE,
+  interactive_prompt = TRUE
 )
 }
 \arguments{
 \item{question}{The individual question/prompt which GPT is supposed to answer.}
 
 \item{error}{Logical. If TRUE, adds the last error message to the output. FALSE per default.}
+
+\item{interactive_prompt}{Logical. If TRUE, the popup-window is usable (necessary for the testing environment).}
 }
 \value{
 Response

@@ -10,6 +10,8 @@ r_error <- function(error = TRUE) {
   # Getting the session of the student
   environment <- environment_info(error)
 
+  cat("RAINER analyzes your error message: \n", environment$error_message, "\n")
+
   # building the message
   if (Sys.getenv("rainer_language") == "english") {
     body <- list(

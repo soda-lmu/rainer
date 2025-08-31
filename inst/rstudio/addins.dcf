@@ -2,3 +2,8 @@ Name: Explain an error message
 Description: Executes function r_error() in order to explain an error message
 Binding: r_error_addin
 Interaktive: false
+
+Name: Write an individual question
+Description: Executes function r_explain() and allows for an individual question
+Binding: r_explain_addin
+Interaktive: true

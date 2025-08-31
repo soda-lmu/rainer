@@ -7,6 +7,7 @@
 
 environment_info <- function(error = TRUE) {
   info <- list(
+    last_executed_code = last_code(),
     script = current_script(),
     objects = environment_objects(),
     datastructure = header(),

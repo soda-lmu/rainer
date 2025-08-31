@@ -2,7 +2,7 @@
 % Please edit documentation in R/r_error_addin.R
 \name{r_error_addin}
 \alias{r_error_addin}
-\title{Addin wich r_error, which provides an explanation for an error message}
+\title{Addin with r_error, which provides an explanation for an error message}
 \usage{
 r_error_addin()
 }

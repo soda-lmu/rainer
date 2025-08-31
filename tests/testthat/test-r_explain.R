@@ -22,8 +22,8 @@ test_that("r_explain correctly processes English language requests", {
     log_post = function(name, content) NULL
   )
 
-  output <- capture_output(r_explain("Why is my code not working?"))
-  expect_equal(output, "This is a test explanation in English")
+  output <- capture_output(r_explain("Why is my code not working?", interactive_prompt = FALSE))
+  expect_match(output, "This is a test explanation in English")
   expect_true(grepl("You are helping students", body_received$messages[[1]]$content))
   expect_false(grepl("Du hilfst Studierenden", body_received$messages[[1]]$content))
 })
@@ -50,7 +50,7 @@ test_that("r_explain handles custom questions correctly", {
   )
 
   custom_question <- "How can I optimize this loop?"
-  capture_output(r_explain(custom_question))
+  capture_output(r_explain(custom_question, interactive_prompt = FALSE))
   expect_true(grepl(custom_question, question_received))
 })
 
@@ -69,7 +69,7 @@ test_that("r_explain handles error parameter correctly", {
     log_post = function(name, content) NULL
   )
 
-  capture_output(r_explain(error = TRUE))
+  capture_output(r_explain(error = TRUE, interactive_prompt = FALSE))
   expect_true(error_param_received)
 })
 
@@ -88,7 +88,7 @@ test_that("r_explain correctly builds message body", {
     log_post = function(name, content) NULL
   )
 
-  capture_output(r_explain())
+  capture_output(r_explain(interactive_prompt = FALSE))
 
   expect_true(is.list(body_captured))
   expect_equal(length(body_captured$messages), 2)

@@ -1,4 +1,4 @@
-# RAINER: The R Assistant IN Error Resolution 
+# RAINER: The R Assistant IN Error Resolution <img src="man/figures/logo.png" width="120" align="right" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/soda-lmu/rainer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/soda-lmu/rainer/actions/workflows/R-CMD-check.yaml)

@@ -12,19 +12,6 @@ r_explain <- function(question = "The code does not yield the result I intended.
                       error = FALSE,
                       interactive_prompt = TRUE) {
 
-  if (interactive_prompt && interactive() && rstudioapi::isAvailable()) {
-    user_input <- rstudioapi::showPrompt(
-      title = "What should be explained?",
-      message = "Please enter your question for the assistant:",
-      default = NULL
-    )
-
-    # If user cancels (returns NULL), exit
-    if (is.null(user_input)) return(invisible(NULL))
-
-    question <- user_input
-  }
-
   cat("RAINER is thinking about your question: \n", question, "\n")
 
   # Getting the session of the student

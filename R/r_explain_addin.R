@@ -6,5 +6,13 @@
 #'
 
 r_explain_addin <- function() {
-  rstudioapi::callFun("sendToConsole", "r_explain()")
+  user_input <- rstudioapi::showPrompt(
+    title = "What should be explained?",
+    message = "Please enter your question for the assistant:",
+    default = ""
+  )
+
+  if (is.null(user_input)) return(invisible(NULL))
+
+  r_explain(question = user_input)
 }

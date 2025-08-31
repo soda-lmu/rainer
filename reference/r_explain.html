@@ -40,7 +40,8 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">r_explain</span><span class="op">(</span></span>
 <span>  question <span class="op">=</span></span>
 <span>    <span class="st">"The code does not yield the result I intended. Please explain what the problem might be."</span>,</span>
-<span>  error <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  error <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  interactive_prompt <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -54,6 +55,10 @@
 
 <dt id="arg-error">error<a class="anchor" aria-label="anchor" href="#arg-error"></a></dt>
 <dd><p>Logical. If TRUE, adds the last error message to the output. FALSE per default.</p></dd>
+
+
+<dt id="arg-interactive-prompt">interactive_prompt<a class="anchor" aria-label="anchor" href="#arg-interactive-prompt"></a></dt>
+<dd><p>Logical. If TRUE, the popup-window is usable (necessary for the testing environment).</p></dd>
 
 </dl></div>
     <div class="section level2">

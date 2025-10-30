@@ -9,7 +9,7 @@ Welcome to RAINER - your personal assistant for troubleshooting in R!
 RAINER helps you resolve errors, understand unexpected outputs, and improve your code using a large language model (LLM). It examines the current state of your workspace and code to provide individual explanations and suggestions.
 
 ### Example usage
-![Example](https://github.com/user-attachments/assets/4ed409d2-a618-4630-8817-15d49275571e)
+![Example](man/figures/Example_Usage.png)
 
 ## Overview
 

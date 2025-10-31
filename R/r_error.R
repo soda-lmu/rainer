@@ -50,5 +50,8 @@ r_error <- function(error = TRUE) {
   # printing the response
   cat(content_vector)
 
-  log_post(name = "r_error", content = body)
+  body_log <- body
+  body_log["GPT response"] <- content_vector
+
+  log_post(name = "r_error", content = body_log)
 }

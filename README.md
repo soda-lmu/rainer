@@ -67,7 +67,7 @@ Access to the LLM is provided by GitHub. Hence, the usage of RAINER's functions 
 
 RAINER was developed to help students with little or no prior programming experience in R. To improve the package, we would like to save a portion of queries for academic analysis.
 
-The logged information contains the same information as the prompt sent to GPT (see what the query contains above). This information is saved anonymously without the possibility of tracing back who sent the query.
+The logged information contains 1. the same information as the prompt sent to GPT (see what the query contains above) and 2. the response of the LLM. This information is saved anonymously without the possibility of tracing back who sent the query.
 
 Acceptance of logging is voluntary and the package does work without accepting it, too. The acceptance can be withdrawn at any time with the function `rainer:::logging()` and choosing no (as set per default).
 

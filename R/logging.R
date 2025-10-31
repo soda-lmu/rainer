@@ -9,7 +9,7 @@ logging <- function() {
   cat("RAINER was developed to help students with little or no prior programming experience in R.
   To improve the package, we would like to save a portion of queries for academic analysis. \n
 
-  The logged information contains the same information as the prompt sent to GPT.
+  The logged information contains 1. the same information as the prompt sent to GPT and 2. the response of GPT.
   This information is saved anonymously without the possibility of tracing back who sent the query. \n
 
   Acceptance of logging is voluntary and the package does work without accepting it, too.

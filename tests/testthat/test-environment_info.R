@@ -29,10 +29,6 @@ EXAMPLE_SCRIPT <- c(
 
 # Test last_code function
 test_that("last_code snapshot with mocked history", {
-  # Create a temporary file with mock history
-  temp_hist <- tempfile()
-  writeLines(c("library(dplyr)", "x <- mtcars %>% filter(mpg > 20)", "summary(x)"), temp_hist)
-
   # Mock savehistory and readLines for non-interactive session
   local_mocked_bindings(
     interactive = function() TRUE,
@@ -41,13 +37,12 @@ test_that("last_code snapshot with mocked history", {
 
   local_mocked_bindings(
     savehistory = function(fname) {
-      file.copy(temp_hist, fname, overwrite = TRUE)
+      writeLines(c("library(dplyr)", "x <- mtcars %>% filter(mpg > 20)", "summary(x)"), fname)
     },
     .package = "utils"
   )
 
   result <- last_code()
-  unlink(temp_hist)
   expect_snapshot(result)
 })
 

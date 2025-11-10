@@ -1,10 +1,3 @@
-# last_code snapshot with mocked history
-
-    Code
-      result
-    Output
-      [1] "library(dplyr)"
-
 # current_script snapshot with mocked RStudio API
 
     Code

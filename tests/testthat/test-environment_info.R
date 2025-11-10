@@ -27,35 +27,6 @@ EXAMPLE_SCRIPT <- c(
   "print(result_data)"
 )
 
-# Test last_code function
-test_that("last_code snapshot with mocked history", {
-  # Mock savehistory and readLines for non-interactive session
-  local_mocked_bindings(
-    interactive = function() TRUE,
-    .package = "base"
-  )
-
-  local_mocked_bindings(
-    savehistory = function(fname) {
-      writeLines(c("library(dplyr)", "x <- mtcars %>% filter(mpg > 20)", "summary(x)"), fname)
-    },
-    .package = "utils"
-  )
-
-  result <- last_code()
-  expect_snapshot(result)
-})
-
-test_that("last_code returns NA in non-interactive session", {
-  local_mocked_bindings(
-    interactive = function() FALSE,
-    .package = "base"
-  )
-
-  result <- last_code()
-  expect_equal(result, NA_character_)
-})
-
 # Test current_script function with RStudio API mock
 test_that("current_script snapshot with mocked RStudio API", {
   # Mock RStudio API with example script

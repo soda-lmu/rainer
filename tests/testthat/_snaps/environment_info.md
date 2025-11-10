@@ -3,7 +3,7 @@
     Code
       result
     Output
-      [1] "Line #: 1: # Statistical Analysis Script\n Line #: 2: \n Line #: 3: # Load required libraries\n Line #: 4: library(dplyr)\n Line #: 5: library(ggplot2)\n Line #: 6: \n Line #: 7: # Set parameters\n Line #: 8: threshold <- 0.05\n Line #: 9: \n Line #: 10: # Define helper function\n Line #: 11: calculate_mean <- function(x) mean(x, na.rm = TRUE)\n Line #: 12: \n Line #: 13: # Load and prepare data\n Line #: 14: analysis_data <- read.csv('input.csv')\n Line #: 15: \n Line #: 16: # Perform analysis\n Line #: 17: result_data <- analysis_data %>%\n Line #: 18:   group_by(category) %>%\n Line #: 19:   summarise(mean = calculate_mean(value))\n Line #: 20: \n Line #: 21: # Display results\n Line #: 22: print(result_data)"
+      [1] "L1:# Statistical Analysis Script\nL2:\nL3:# Load required libraries\nL4:library(dplyr)\nL5:library(ggplot2)\nL6:\nL7:# Set parameters\nL8:threshold <- 0.05\nL9:\nL10:# Define helper function\nL11:calculate_mean <- function(x) mean(x, na.rm = TRUE)\nL12:\nL13:# Load and prepare data\nL14:analysis_data <- read.csv('input.csv')\nL15:\nL16:# Perform analysis\nL17:result_data <- analysis_data %>%\nL18:  group_by(category) %>%\nL19:  summarise(mean = calculate_mean(value))\nL20:\nL21:# Display results\nL22:print(result_data)"
 
 # environment_objects snapshot with various object types
 
@@ -70,7 +70,7 @@
       [1] "result_data <- analysis_data %>% group_by(category) %>% summarise(mean = calculate_mean(value))"
       
       $script
-      [1] "Line #: 1: # Statistical Analysis Script\n Line #: 2: \n Line #: 3: # Load required libraries\n Line #: 4: library(dplyr)\n Line #: 5: library(ggplot2)\n Line #: 6: \n Line #: 7: # Set parameters\n Line #: 8: threshold <- 0.05\n Line #: 9: \n Line #: 10: # Define helper function\n Line #: 11: calculate_mean <- function(x) mean(x, na.rm = TRUE)\n Line #: 12: \n Line #: 13: # Load and prepare data\n Line #: 14: analysis_data <- read.csv('input.csv')\n Line #: 15: \n Line #: 16: # Perform analysis\n Line #: 17: result_data <- analysis_data %>%\n Line #: 18:   group_by(category) %>%\n Line #: 19:   summarise(mean = calculate_mean(value))\n Line #: 20: \n Line #: 21: # Display results\n Line #: 22: print(result_data)"
+      [1] "L1:# Statistical Analysis Script\nL2:\nL3:# Load required libraries\nL4:library(dplyr)\nL5:library(ggplot2)\nL6:\nL7:# Set parameters\nL8:threshold <- 0.05\nL9:\nL10:# Define helper function\nL11:calculate_mean <- function(x) mean(x, na.rm = TRUE)\nL12:\nL13:# Load and prepare data\nL14:analysis_data <- read.csv('input.csv')\nL15:\nL16:# Perform analysis\nL17:result_data <- analysis_data %>%\nL18:  group_by(category) %>%\nL19:  summarise(mean = calculate_mean(value))\nL20:\nL21:# Display results\nL22:print(result_data)"
       
       $objects
       $objects$analysis_data
@@ -113,7 +113,7 @@
       [1] "config <- list(setting1 = TRUE, setting2 = 100)"
       
       $script
-      [1] "Line #: 1: # Statistical Analysis Script\n Line #: 2: \n Line #: 3: # Load required libraries\n Line #: 4: library(dplyr)\n Line #: 5: library(ggplot2)\n Line #: 6: \n Line #: 7: # Set parameters\n Line #: 8: threshold <- 0.05\n Line #: 9: \n Line #: 10: # Define helper function\n Line #: 11: calculate_mean <- function(x) mean(x, na.rm = TRUE)\n Line #: 12: \n Line #: 13: # Load and prepare data\n Line #: 14: analysis_data <- read.csv('input.csv')\n Line #: 15: \n Line #: 16: # Perform analysis\n Line #: 17: result_data <- analysis_data %>%\n Line #: 18:   group_by(category) %>%\n Line #: 19:   summarise(mean = calculate_mean(value))\n Line #: 20: \n Line #: 21: # Display results\n Line #: 22: print(result_data)"
+      [1] "L1:# Statistical Analysis Script\nL2:\nL3:# Load required libraries\nL4:library(dplyr)\nL5:library(ggplot2)\nL6:\nL7:# Set parameters\nL8:threshold <- 0.05\nL9:\nL10:# Define helper function\nL11:calculate_mean <- function(x) mean(x, na.rm = TRUE)\nL12:\nL13:# Load and prepare data\nL14:analysis_data <- read.csv('input.csv')\nL15:\nL16:# Perform analysis\nL17:result_data <- analysis_data %>%\nL18:  group_by(category) %>%\nL19:  summarise(mean = calculate_mean(value))\nL20:\nL21:# Display results\nL22:print(result_data)"
       
       $objects
       $objects$config
@@ -166,7 +166,7 @@
       [1] "mixed_types <- data.frame(id = 1:3, name = c('John', 'Jane', 'Bob'), score = c(85.5, 92.3, 78.9), passed = c(TRUE, TRUE, FALSE), date = as.Date(c('2025-01-01', '2025-01-02', '2025-01-03')))"
       
       $script
-      [1] "Line #: 1: # Statistical Analysis Script\n Line #: 2: \n Line #: 3: # Load required libraries\n Line #: 4: library(dplyr)\n Line #: 5: library(ggplot2)\n Line #: 6: \n Line #: 7: # Set parameters\n Line #: 8: threshold <- 0.05\n Line #: 9: \n Line #: 10: # Define helper function\n Line #: 11: calculate_mean <- function(x) mean(x, na.rm = TRUE)\n Line #: 12: \n Line #: 13: # Load and prepare data\n Line #: 14: analysis_data <- read.csv('input.csv')\n Line #: 15: \n Line #: 16: # Perform analysis\n Line #: 17: result_data <- analysis_data %>%\n Line #: 18:   group_by(category) %>%\n Line #: 19:   summarise(mean = calculate_mean(value))\n Line #: 20: \n Line #: 21: # Display results\n Line #: 22: print(result_data)"
+      [1] "L1:# Statistical Analysis Script\nL2:\nL3:# Load required libraries\nL4:library(dplyr)\nL5:library(ggplot2)\nL6:\nL7:# Set parameters\nL8:threshold <- 0.05\nL9:\nL10:# Define helper function\nL11:calculate_mean <- function(x) mean(x, na.rm = TRUE)\nL12:\nL13:# Load and prepare data\nL14:analysis_data <- read.csv('input.csv')\nL15:\nL16:# Perform analysis\nL17:result_data <- analysis_data %>%\nL18:  group_by(category) %>%\nL19:  summarise(mean = calculate_mean(value))\nL20:\nL21:# Display results\nL22:print(result_data)"
       
       $objects
       $objects$counter

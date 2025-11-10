@@ -10,8 +10,8 @@ current_script <- function() {
       script_content <- rstudioapi::getSourceEditorContext()$contents
       if (!is.null(script_content)) {
         # Add line numbers to the script content
-        numbered_script <- paste("Line #", seq_along(script_content), script_content, sep = ": ")
-        paste(numbered_script, collapse = "\n ")
+        numbered_script <- paste0("L", seq_along(script_content), ":", script_content)
+        paste0(numbered_script, collapse = "\n")
       } else {
         NULL
       }

@@ -1,6 +1,6 @@
 Package: rainer
 Title: R Assistant IN Error Resolution
-Version: 0.0.0.9000
+Version: 0.1.0.9000
 Authors@R: c(
     person("Niklas", "Ippisch", , "niklas.ippisch@outlook.de", role = c("cre", "aut")),
     person("Jan", "Simson", role = "aut"),

@@ -19,7 +19,7 @@ logging <- function() {
   The data will be deleted as soon as they are not used anymore in an academic context.
   In case of any questions, please contact us (rainer@stat.uni-muenchen.de). Thank you very much!")
 
-  response_log <- utils::askYesNo(msg = "Do you consent to logging your query?", default = FALSE)
+  response_log <- ask_yes_no(msg = "Do you consent to logging your query?", default = FALSE)
 
   if (response_log) {
     .set_config(setting = "rainer_logging", content = TRUE)

@@ -16,7 +16,7 @@ data_protection <- function() {
   - The names of loaded packages \n
   - The last error message")
 
-  response_data <- utils::askYesNo(msg = "Do you understand and accept the data protection regulations?", default = FALSE)
+  response_data <- ask_yes_no(msg = "Do you understand and accept the data protection regulations?", default = FALSE)
 
   if (response_data) {
     .set_config(setting = "rainer_dataprot", content = TRUE)

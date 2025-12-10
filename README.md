@@ -23,11 +23,11 @@ RAINER helps you resolve errors, understand unexpected outputs, and improve your
 RAINER is currently not available on CRAN (yet), but can be installed directly from GitHub. To install the package, use the command below.
 
 ```r
-# If you have not installed it yet, install the remotes package first
-install.packages("remotes")
+# If you have not installed it yet, install the pak package first
+install.packages("pak")
 
 # Install RAINER
-remotes::install_github("soda-lmu/rainer")
+pak::pak("soda-lmu/rainer")
 ```
 
 ## Getting Started

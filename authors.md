@@ -17,7 +17,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/soda-lmu/rainer/blob/v0.1.0/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/soda-lmu/rainer/blob/main/DESCRIPTION)
 
 Ippisch N, Simson J, Beck J, Haensch A, Schierholz M, Herklotz M (2025).
 *rainer: R Assistant IN Error Resolution*. R package version 0.1.0.9000,

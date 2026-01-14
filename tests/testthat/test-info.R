@@ -37,8 +37,8 @@ test_that("header returns correct structure for datasets", {
   result <- header()
 
   # Check that dataframe column names are correctly identified
-  expect_equal(result[["df1"]], c("col1", "col2"))
-  expect_equal(result[["df2"]], c("name", "age"))
+  expect_equal(result[["df1"]]$columns, c("col1", "col2"))
+  expect_equal(result[["df2"]]$columns, c("name", "age"))
 
   # Check format of the result
   expect_type(result, "list")
@@ -103,5 +103,5 @@ test_that("environment_info returns correctly structured information", {
   # Check specific values
   expect_equal(result_with_error$script, "Sample script content")
   expect_equal(result_with_error$objects$test_df, "dataframe")
-  expect_equal(result_with_error$datastructure$test_df, "x")
+  expect_equal(result_with_error$datastructure$test_df$columns, "x")
 })

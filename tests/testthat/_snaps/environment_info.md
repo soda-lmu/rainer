@@ -45,26 +45,6 @@
       result
     Output
       $iris_subset
-      $iris_subset$columns
-      [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     
-      
-      $iris_subset$types
-      $iris_subset$types$Sepal.Length
-      [1] "numeric"
-      
-      $iris_subset$types$Sepal.Width
-      [1] "numeric"
-      
-      $iris_subset$types$Petal.Length
-      [1] "numeric"
-      
-      $iris_subset$types$Petal.Width
-      [1] "numeric"
-      
-      $iris_subset$types$Species
-      [1] "character"
-      
-      
       $iris_subset$dimensions
       $iris_subset$dimensions$rows
       [1] 3
@@ -73,96 +53,68 @@
       [1] 5
       
       
-      $iris_subset$numeric
-      $iris_subset$numeric$Sepal.Length
-      $iris_subset$numeric$Sepal.Length$has_na
+      $iris_subset$columns
+      $iris_subset$columns$Sepal.Length
+      $iris_subset$columns$Sepal.Length$type
+      [1] "numeric"
+      
+      $iris_subset$columns$Sepal.Length$has_na
       [1] FALSE
       
-      $iris_subset$numeric$Sepal.Length$has_negative
+      $iris_subset$columns$Sepal.Length$has_zero
       [1] FALSE
       
-      $iris_subset$numeric$Sepal.Length$has_zero
+      
+      $iris_subset$columns$Sepal.Width
+      $iris_subset$columns$Sepal.Width$type
+      [1] "numeric"
+      
+      $iris_subset$columns$Sepal.Width$has_na
       [1] FALSE
       
-      $iris_subset$numeric$Sepal.Length$has_positive
-      [1] TRUE
-      
-      
-      $iris_subset$numeric$Sepal.Width
-      $iris_subset$numeric$Sepal.Width$has_na
+      $iris_subset$columns$Sepal.Width$has_zero
       [1] FALSE
       
-      $iris_subset$numeric$Sepal.Width$has_negative
+      
+      $iris_subset$columns$Petal.Length
+      $iris_subset$columns$Petal.Length$type
+      [1] "numeric"
+      
+      $iris_subset$columns$Petal.Length$has_na
       [1] FALSE
       
-      $iris_subset$numeric$Sepal.Width$has_zero
+      $iris_subset$columns$Petal.Length$has_zero
       [1] FALSE
       
-      $iris_subset$numeric$Sepal.Width$has_positive
-      [1] TRUE
       
+      $iris_subset$columns$Petal.Width
+      $iris_subset$columns$Petal.Width$type
+      [1] "numeric"
       
-      $iris_subset$numeric$Petal.Length
-      $iris_subset$numeric$Petal.Length$has_na
+      $iris_subset$columns$Petal.Width$has_na
       [1] FALSE
       
-      $iris_subset$numeric$Petal.Length$has_negative
+      $iris_subset$columns$Petal.Width$has_zero
       [1] FALSE
       
-      $iris_subset$numeric$Petal.Length$has_zero
+      
+      $iris_subset$columns$Species
+      $iris_subset$columns$Species$type
+      [1] "character"
+      
+      $iris_subset$columns$Species$has_na
       [1] FALSE
       
-      $iris_subset$numeric$Petal.Length$has_positive
-      [1] TRUE
-      
-      
-      $iris_subset$numeric$Petal.Width
-      $iris_subset$numeric$Petal.Width$has_na
-      [1] FALSE
-      
-      $iris_subset$numeric$Petal.Width$has_negative
-      [1] FALSE
-      
-      $iris_subset$numeric$Petal.Width$has_zero
-      [1] FALSE
-      
-      $iris_subset$numeric$Petal.Width$has_positive
-      [1] TRUE
-      
-      
-      
-      $iris_subset$character
-      $iris_subset$character$Species
-      $iris_subset$character$Species$n_unique
+      $iris_subset$columns$Species$n_unique
       [1] 1
       
-      $iris_subset$character$Species$has_na
-      [1] FALSE
-      
-      $iris_subset$character$Species$all_empty
+      $iris_subset$columns$Species$all_empty
       [1] FALSE
       
       
       
       
       $mtcars_subset
-      $mtcars_subset$columns
-      [1] "mpg"  "cyl"  "disp" "hp"  
-      
-      $mtcars_subset$types
-      $mtcars_subset$types$mpg
-      [1] "numeric"
-      
-      $mtcars_subset$types$cyl
-      [1] "numeric"
-      
-      $mtcars_subset$types$disp
-      [1] "numeric"
-      
-      $mtcars_subset$types$hp
-      [1] "numeric"
-      
-      
       $mtcars_subset$dimensions
       $mtcars_subset$dimensions$rows
       [1] 3
@@ -171,77 +123,54 @@
       [1] 4
       
       
-      $mtcars_subset$numeric
-      $mtcars_subset$numeric$mpg
-      $mtcars_subset$numeric$mpg$has_na
+      $mtcars_subset$columns
+      $mtcars_subset$columns$mpg
+      $mtcars_subset$columns$mpg$type
+      [1] "numeric"
+      
+      $mtcars_subset$columns$mpg$has_na
       [1] FALSE
       
-      $mtcars_subset$numeric$mpg$has_negative
+      $mtcars_subset$columns$mpg$has_zero
       [1] FALSE
       
-      $mtcars_subset$numeric$mpg$has_zero
+      
+      $mtcars_subset$columns$cyl
+      $mtcars_subset$columns$cyl$type
+      [1] "numeric"
+      
+      $mtcars_subset$columns$cyl$has_na
       [1] FALSE
       
-      $mtcars_subset$numeric$mpg$has_positive
-      [1] TRUE
-      
-      
-      $mtcars_subset$numeric$cyl
-      $mtcars_subset$numeric$cyl$has_na
+      $mtcars_subset$columns$cyl$has_zero
       [1] FALSE
       
-      $mtcars_subset$numeric$cyl$has_negative
+      
+      $mtcars_subset$columns$disp
+      $mtcars_subset$columns$disp$type
+      [1] "numeric"
+      
+      $mtcars_subset$columns$disp$has_na
       [1] FALSE
       
-      $mtcars_subset$numeric$cyl$has_zero
+      $mtcars_subset$columns$disp$has_zero
       [1] FALSE
       
-      $mtcars_subset$numeric$cyl$has_positive
-      [1] TRUE
       
+      $mtcars_subset$columns$hp
+      $mtcars_subset$columns$hp$type
+      [1] "numeric"
       
-      $mtcars_subset$numeric$disp
-      $mtcars_subset$numeric$disp$has_na
+      $mtcars_subset$columns$hp$has_na
       [1] FALSE
       
-      $mtcars_subset$numeric$disp$has_negative
+      $mtcars_subset$columns$hp$has_zero
       [1] FALSE
-      
-      $mtcars_subset$numeric$disp$has_zero
-      [1] FALSE
-      
-      $mtcars_subset$numeric$disp$has_positive
-      [1] TRUE
-      
-      
-      $mtcars_subset$numeric$hp
-      $mtcars_subset$numeric$hp$has_na
-      [1] FALSE
-      
-      $mtcars_subset$numeric$hp$has_negative
-      [1] FALSE
-      
-      $mtcars_subset$numeric$hp$has_zero
-      [1] FALSE
-      
-      $mtcars_subset$numeric$hp$has_positive
-      [1] TRUE
       
       
       
       
       $simple_df
-      $simple_df$columns
-      [1] "a" "b"
-      
-      $simple_df$types
-      $simple_df$types$a
-      [1] "integer"
-      
-      $simple_df$types$b
-      [1] "character"
-      
-      
       $simple_df$dimensions
       $simple_df$dimensions$rows
       [1] 3
@@ -250,31 +179,29 @@
       [1] 2
       
       
-      $simple_df$numeric
-      $simple_df$numeric$a
-      $simple_df$numeric$a$has_na
+      $simple_df$columns
+      $simple_df$columns$a
+      $simple_df$columns$a$type
+      [1] "integer"
+      
+      $simple_df$columns$a$has_na
       [1] FALSE
       
-      $simple_df$numeric$a$has_negative
+      $simple_df$columns$a$has_zero
       [1] FALSE
       
-      $simple_df$numeric$a$has_zero
+      
+      $simple_df$columns$b
+      $simple_df$columns$b$type
+      [1] "character"
+      
+      $simple_df$columns$b$has_na
       [1] FALSE
       
-      $simple_df$numeric$a$has_positive
-      [1] TRUE
-      
-      
-      
-      $simple_df$character
-      $simple_df$character$b
-      $simple_df$character$b$n_unique
+      $simple_df$columns$b$n_unique
       [1] 3
       
-      $simple_df$character$b$has_na
-      [1] FALSE
-      
-      $simple_df$character$b$all_empty
+      $simple_df$columns$b$all_empty
       [1] FALSE
       
       
@@ -315,20 +242,6 @@
       
       $datastructure
       $datastructure$analysis_data
-      $datastructure$analysis_data$columns
-      [1] "id"       "value"    "category"
-      
-      $datastructure$analysis_data$types
-      $datastructure$analysis_data$types$id
-      [1] "integer"
-      
-      $datastructure$analysis_data$types$value
-      [1] "numeric"
-      
-      $datastructure$analysis_data$types$category
-      [1] "character"
-      
-      
       $datastructure$analysis_data$dimensions
       $datastructure$analysis_data$dimensions$rows
       [1] 10
@@ -337,62 +250,46 @@
       [1] 3
       
       
-      $datastructure$analysis_data$numeric
-      $datastructure$analysis_data$numeric$id
-      $datastructure$analysis_data$numeric$id$has_na
+      $datastructure$analysis_data$columns
+      $datastructure$analysis_data$columns$id
+      $datastructure$analysis_data$columns$id$type
+      [1] "integer"
+      
+      $datastructure$analysis_data$columns$id$has_na
       [1] FALSE
       
-      $datastructure$analysis_data$numeric$id$has_negative
+      $datastructure$analysis_data$columns$id$has_zero
       [1] FALSE
       
-      $datastructure$analysis_data$numeric$id$has_zero
+      
+      $datastructure$analysis_data$columns$value
+      $datastructure$analysis_data$columns$value$type
+      [1] "numeric"
+      
+      $datastructure$analysis_data$columns$value$has_na
       [1] FALSE
       
-      $datastructure$analysis_data$numeric$id$has_positive
-      [1] TRUE
-      
-      
-      $datastructure$analysis_data$numeric$value
-      $datastructure$analysis_data$numeric$value$has_na
+      $datastructure$analysis_data$columns$value$has_zero
       [1] FALSE
       
-      $datastructure$analysis_data$numeric$value$has_negative
-      [1] TRUE
       
-      $datastructure$analysis_data$numeric$value$has_zero
+      $datastructure$analysis_data$columns$category
+      $datastructure$analysis_data$columns$category$type
+      [1] "character"
+      
+      $datastructure$analysis_data$columns$category$has_na
       [1] FALSE
       
-      $datastructure$analysis_data$numeric$value$has_positive
-      [1] TRUE
-      
-      
-      
-      $datastructure$analysis_data$character
-      $datastructure$analysis_data$character$category
-      $datastructure$analysis_data$character$category$n_unique
+      $datastructure$analysis_data$columns$category$n_unique
       [1] 2
       
-      $datastructure$analysis_data$character$category$has_na
-      [1] FALSE
-      
-      $datastructure$analysis_data$character$category$all_empty
+      $datastructure$analysis_data$columns$category$all_empty
       [1] FALSE
       
       
       
       
       $datastructure$result_data
-      $datastructure$result_data$columns
-      [1] "group" "mean" 
-      
-      $datastructure$result_data$types
-      $datastructure$result_data$types$group
-      [1] "character"
-      
-      $datastructure$result_data$types$mean
-      [1] "numeric"
-      
-      
       $datastructure$result_data$dimensions
       $datastructure$result_data$dimensions$rows
       [1] 2
@@ -401,31 +298,29 @@
       [1] 2
       
       
-      $datastructure$result_data$numeric
-      $datastructure$result_data$numeric$mean
-      $datastructure$result_data$numeric$mean$has_na
+      $datastructure$result_data$columns
+      $datastructure$result_data$columns$group
+      $datastructure$result_data$columns$group$type
+      [1] "character"
+      
+      $datastructure$result_data$columns$group$has_na
       [1] FALSE
       
-      $datastructure$result_data$numeric$mean$has_negative
-      [1] TRUE
-      
-      $datastructure$result_data$numeric$mean$has_zero
-      [1] FALSE
-      
-      $datastructure$result_data$numeric$mean$has_positive
-      [1] TRUE
-      
-      
-      
-      $datastructure$result_data$character
-      $datastructure$result_data$character$group
-      $datastructure$result_data$character$group$n_unique
+      $datastructure$result_data$columns$group$n_unique
       [1] 2
       
-      $datastructure$result_data$character$group$has_na
+      $datastructure$result_data$columns$group$all_empty
       [1] FALSE
       
-      $datastructure$result_data$character$group$all_empty
+      
+      $datastructure$result_data$columns$mean
+      $datastructure$result_data$columns$mean$type
+      [1] "numeric"
+      
+      $datastructure$result_data$columns$mean$has_na
+      [1] FALSE
+      
+      $datastructure$result_data$columns$mean$has_zero
       [1] FALSE
       
       
@@ -463,17 +358,6 @@
       
       $datastructure
       $datastructure$my_data
-      $datastructure$my_data$columns
-      [1] "x" "y"
-      
-      $datastructure$my_data$types
-      $datastructure$my_data$types$x
-      [1] "integer"
-      
-      $datastructure$my_data$types$y
-      [1] "character"
-      
-      
       $datastructure$my_data$dimensions
       $datastructure$my_data$dimensions$rows
       [1] 5
@@ -482,31 +366,29 @@
       [1] 2
       
       
-      $datastructure$my_data$numeric
-      $datastructure$my_data$numeric$x
-      $datastructure$my_data$numeric$x$has_na
+      $datastructure$my_data$columns
+      $datastructure$my_data$columns$x
+      $datastructure$my_data$columns$x$type
+      [1] "integer"
+      
+      $datastructure$my_data$columns$x$has_na
       [1] FALSE
       
-      $datastructure$my_data$numeric$x$has_negative
+      $datastructure$my_data$columns$x$has_zero
       [1] FALSE
       
-      $datastructure$my_data$numeric$x$has_zero
+      
+      $datastructure$my_data$columns$y
+      $datastructure$my_data$columns$y$type
+      [1] "character"
+      
+      $datastructure$my_data$columns$y$has_na
       [1] FALSE
       
-      $datastructure$my_data$numeric$x$has_positive
-      [1] TRUE
-      
-      
-      
-      $datastructure$my_data$character
-      $datastructure$my_data$character$y
-      $datastructure$my_data$character$y$n_unique
+      $datastructure$my_data$columns$y$n_unique
       [1] 5
       
-      $datastructure$my_data$character$y$has_na
-      [1] FALSE
-      
-      $datastructure$my_data$character$y$all_empty
+      $datastructure$my_data$columns$y$all_empty
       [1] FALSE
       
       
@@ -569,26 +451,6 @@
       
       $datastructure
       $datastructure$mixed_types
-      $datastructure$mixed_types$columns
-      [1] "id"     "name"   "score"  "passed" "date"  
-      
-      $datastructure$mixed_types$types
-      $datastructure$mixed_types$types$id
-      [1] "integer"
-      
-      $datastructure$mixed_types$types$name
-      [1] "character"
-      
-      $datastructure$mixed_types$types$score
-      [1] "numeric"
-      
-      $datastructure$mixed_types$types$passed
-      [1] "logical"
-      
-      $datastructure$mixed_types$types$date
-      [1] "Date"
-      
-      
       $datastructure$mixed_types$dimensions
       $datastructure$mixed_types$dimensions$rows
       [1] 3
@@ -597,80 +459,62 @@
       [1] 5
       
       
-      $datastructure$mixed_types$numeric
-      $datastructure$mixed_types$numeric$id
-      $datastructure$mixed_types$numeric$id$has_na
+      $datastructure$mixed_types$columns
+      $datastructure$mixed_types$columns$id
+      $datastructure$mixed_types$columns$id$type
+      [1] "integer"
+      
+      $datastructure$mixed_types$columns$id$has_na
       [1] FALSE
       
-      $datastructure$mixed_types$numeric$id$has_negative
+      $datastructure$mixed_types$columns$id$has_zero
       [1] FALSE
       
-      $datastructure$mixed_types$numeric$id$has_zero
+      
+      $datastructure$mixed_types$columns$name
+      $datastructure$mixed_types$columns$name$type
+      [1] "character"
+      
+      $datastructure$mixed_types$columns$name$has_na
       [1] FALSE
       
-      $datastructure$mixed_types$numeric$id$has_positive
-      [1] TRUE
-      
-      
-      $datastructure$mixed_types$numeric$score
-      $datastructure$mixed_types$numeric$score$has_na
-      [1] FALSE
-      
-      $datastructure$mixed_types$numeric$score$has_negative
-      [1] FALSE
-      
-      $datastructure$mixed_types$numeric$score$has_zero
-      [1] FALSE
-      
-      $datastructure$mixed_types$numeric$score$has_positive
-      [1] TRUE
-      
-      
-      
-      $datastructure$mixed_types$character
-      $datastructure$mixed_types$character$name
-      $datastructure$mixed_types$character$name$n_unique
+      $datastructure$mixed_types$columns$name$n_unique
       [1] 3
       
-      $datastructure$mixed_types$character$name$has_na
+      $datastructure$mixed_types$columns$name$all_empty
       [1] FALSE
       
-      $datastructure$mixed_types$character$name$all_empty
+      
+      $datastructure$mixed_types$columns$score
+      $datastructure$mixed_types$columns$score$type
+      [1] "numeric"
+      
+      $datastructure$mixed_types$columns$score$has_na
+      [1] FALSE
+      
+      $datastructure$mixed_types$columns$score$has_zero
+      [1] FALSE
+      
+      
+      $datastructure$mixed_types$columns$passed
+      $datastructure$mixed_types$columns$passed$type
+      [1] "logical"
+      
+      $datastructure$mixed_types$columns$passed$has_na
+      [1] FALSE
+      
+      
+      $datastructure$mixed_types$columns$date
+      $datastructure$mixed_types$columns$date$type
+      [1] "Date"
+      
+      $datastructure$mixed_types$columns$date$has_na
       [1] FALSE
       
       
       
       
       $datastructure$wide_data
-      $datastructure$wide_data$columns
-      [1] "col1" "col2" "col3" "col4" "col5" "col6" "col7" "col8"
-      
-      $datastructure$wide_data$types
-      $datastructure$wide_data$types$col1
-      [1] "integer"
-      
-      $datastructure$wide_data$types$col2
-      [1] "integer"
-      
-      $datastructure$wide_data$types$col3
-      [1] "integer"
-      
-      $datastructure$wide_data$types$col4
-      [1] "integer"
-      
-      $datastructure$wide_data$types$col5
-      [1] "integer"
-      
-      $datastructure$wide_data$types$col6
-      [1] "integer"
-      
-      $datastructure$wide_data$types$col7
-      [1] "integer"
-      
-      $datastructure$wide_data$types$col8
-      [1] "integer"
-      
-      
       $datastructure$wide_data$dimensions
       $datastructure$wide_data$dimensions$rows
       [1] 3
@@ -679,117 +523,93 @@
       [1] 8
       
       
-      $datastructure$wide_data$numeric
-      $datastructure$wide_data$numeric$col1
-      $datastructure$wide_data$numeric$col1$has_na
+      $datastructure$wide_data$columns
+      $datastructure$wide_data$columns$col1
+      $datastructure$wide_data$columns$col1$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col1$has_na
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col1$has_negative
+      $datastructure$wide_data$columns$col1$has_zero
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col1$has_zero
+      
+      $datastructure$wide_data$columns$col2
+      $datastructure$wide_data$columns$col2$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col2$has_na
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col1$has_positive
-      [1] TRUE
-      
-      
-      $datastructure$wide_data$numeric$col2
-      $datastructure$wide_data$numeric$col2$has_na
+      $datastructure$wide_data$columns$col2$has_zero
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col2$has_negative
+      
+      $datastructure$wide_data$columns$col3
+      $datastructure$wide_data$columns$col3$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col3$has_na
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col2$has_zero
+      $datastructure$wide_data$columns$col3$has_zero
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col2$has_positive
-      [1] TRUE
       
+      $datastructure$wide_data$columns$col4
+      $datastructure$wide_data$columns$col4$type
+      [1] "integer"
       
-      $datastructure$wide_data$numeric$col3
-      $datastructure$wide_data$numeric$col3$has_na
+      $datastructure$wide_data$columns$col4$has_na
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col3$has_negative
+      $datastructure$wide_data$columns$col4$has_zero
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col3$has_zero
+      
+      $datastructure$wide_data$columns$col5
+      $datastructure$wide_data$columns$col5$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col5$has_na
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col3$has_positive
-      [1] TRUE
-      
-      
-      $datastructure$wide_data$numeric$col4
-      $datastructure$wide_data$numeric$col4$has_na
+      $datastructure$wide_data$columns$col5$has_zero
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col4$has_negative
+      
+      $datastructure$wide_data$columns$col6
+      $datastructure$wide_data$columns$col6$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col6$has_na
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col4$has_zero
+      $datastructure$wide_data$columns$col6$has_zero
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col4$has_positive
-      [1] TRUE
       
+      $datastructure$wide_data$columns$col7
+      $datastructure$wide_data$columns$col7$type
+      [1] "integer"
       
-      $datastructure$wide_data$numeric$col5
-      $datastructure$wide_data$numeric$col5$has_na
+      $datastructure$wide_data$columns$col7$has_na
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col5$has_negative
+      $datastructure$wide_data$columns$col7$has_zero
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col5$has_zero
+      
+      $datastructure$wide_data$columns$col8
+      $datastructure$wide_data$columns$col8$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col8$has_na
       [1] FALSE
       
-      $datastructure$wide_data$numeric$col5$has_positive
-      [1] TRUE
-      
-      
-      $datastructure$wide_data$numeric$col6
-      $datastructure$wide_data$numeric$col6$has_na
+      $datastructure$wide_data$columns$col8$has_zero
       [1] FALSE
-      
-      $datastructure$wide_data$numeric$col6$has_negative
-      [1] FALSE
-      
-      $datastructure$wide_data$numeric$col6$has_zero
-      [1] FALSE
-      
-      $datastructure$wide_data$numeric$col6$has_positive
-      [1] TRUE
-      
-      
-      $datastructure$wide_data$numeric$col7
-      $datastructure$wide_data$numeric$col7$has_na
-      [1] FALSE
-      
-      $datastructure$wide_data$numeric$col7$has_negative
-      [1] FALSE
-      
-      $datastructure$wide_data$numeric$col7$has_zero
-      [1] FALSE
-      
-      $datastructure$wide_data$numeric$col7$has_positive
-      [1] TRUE
-      
-      
-      $datastructure$wide_data$numeric$col8
-      $datastructure$wide_data$numeric$col8$has_na
-      [1] FALSE
-      
-      $datastructure$wide_data$numeric$col8$has_negative
-      [1] FALSE
-      
-      $datastructure$wide_data$numeric$col8$has_zero
-      [1] FALSE
-      
-      $datastructure$wide_data$numeric$col8$has_positive
-      [1] TRUE
       
       
       

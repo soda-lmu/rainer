@@ -28,7 +28,8 @@ header <- function() {
           )
 
           if (is.numeric(col_data)) {
-            col_info$has_zero <- any(col_data == 0, na.rm = TRUE)
+            col_info$min <- min(col_data, na.rm = TRUE)
+            col_info$max <- max(col_data, na.rm = TRUE)
           } else if (is.factor(col_data)) {
             col_info$n_levels <- nlevels(col_data)
           } else if (is.character(col_data)) {

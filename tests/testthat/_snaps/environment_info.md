@@ -45,13 +45,194 @@
       result
     Output
       $iris_subset
-      [1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     
+      $iris_subset$dimensions
+      $iris_subset$dimensions$rows
+      [1] 3
+      
+      $iris_subset$dimensions$cols
+      [1] 5
+      
+      
+      $iris_subset$columns
+      $iris_subset$columns$Sepal.Length
+      $iris_subset$columns$Sepal.Length$type
+      [1] "numeric"
+      
+      $iris_subset$columns$Sepal.Length$has_na
+      [1] FALSE
+      
+      $iris_subset$columns$Sepal.Length$min
+      [1] 4.7
+      
+      $iris_subset$columns$Sepal.Length$max
+      [1] 5.1
+      
+      
+      $iris_subset$columns$Sepal.Width
+      $iris_subset$columns$Sepal.Width$type
+      [1] "numeric"
+      
+      $iris_subset$columns$Sepal.Width$has_na
+      [1] FALSE
+      
+      $iris_subset$columns$Sepal.Width$min
+      [1] 3
+      
+      $iris_subset$columns$Sepal.Width$max
+      [1] 3.5
+      
+      
+      $iris_subset$columns$Petal.Length
+      $iris_subset$columns$Petal.Length$type
+      [1] "numeric"
+      
+      $iris_subset$columns$Petal.Length$has_na
+      [1] FALSE
+      
+      $iris_subset$columns$Petal.Length$min
+      [1] 1.3
+      
+      $iris_subset$columns$Petal.Length$max
+      [1] 1.4
+      
+      
+      $iris_subset$columns$Petal.Width
+      $iris_subset$columns$Petal.Width$type
+      [1] "numeric"
+      
+      $iris_subset$columns$Petal.Width$has_na
+      [1] FALSE
+      
+      $iris_subset$columns$Petal.Width$min
+      [1] 0.2
+      
+      $iris_subset$columns$Petal.Width$max
+      [1] 0.2
+      
+      
+      $iris_subset$columns$Species
+      $iris_subset$columns$Species$type
+      [1] "character"
+      
+      $iris_subset$columns$Species$has_na
+      [1] FALSE
+      
+      $iris_subset$columns$Species$n_unique
+      [1] 1
+      
+      $iris_subset$columns$Species$all_empty
+      [1] FALSE
+      
+      
+      
       
       $mtcars_subset
-      [1] "mpg"  "cyl"  "disp" "hp"  
+      $mtcars_subset$dimensions
+      $mtcars_subset$dimensions$rows
+      [1] 3
+      
+      $mtcars_subset$dimensions$cols
+      [1] 4
+      
+      
+      $mtcars_subset$columns
+      $mtcars_subset$columns$mpg
+      $mtcars_subset$columns$mpg$type
+      [1] "numeric"
+      
+      $mtcars_subset$columns$mpg$has_na
+      [1] FALSE
+      
+      $mtcars_subset$columns$mpg$min
+      [1] 21
+      
+      $mtcars_subset$columns$mpg$max
+      [1] 22.8
+      
+      
+      $mtcars_subset$columns$cyl
+      $mtcars_subset$columns$cyl$type
+      [1] "numeric"
+      
+      $mtcars_subset$columns$cyl$has_na
+      [1] FALSE
+      
+      $mtcars_subset$columns$cyl$min
+      [1] 4
+      
+      $mtcars_subset$columns$cyl$max
+      [1] 6
+      
+      
+      $mtcars_subset$columns$disp
+      $mtcars_subset$columns$disp$type
+      [1] "numeric"
+      
+      $mtcars_subset$columns$disp$has_na
+      [1] FALSE
+      
+      $mtcars_subset$columns$disp$min
+      [1] 108
+      
+      $mtcars_subset$columns$disp$max
+      [1] 160
+      
+      
+      $mtcars_subset$columns$hp
+      $mtcars_subset$columns$hp$type
+      [1] "numeric"
+      
+      $mtcars_subset$columns$hp$has_na
+      [1] FALSE
+      
+      $mtcars_subset$columns$hp$min
+      [1] 93
+      
+      $mtcars_subset$columns$hp$max
+      [1] 110
+      
+      
+      
       
       $simple_df
-      [1] "a" "b"
+      $simple_df$dimensions
+      $simple_df$dimensions$rows
+      [1] 3
+      
+      $simple_df$dimensions$cols
+      [1] 2
+      
+      
+      $simple_df$columns
+      $simple_df$columns$a
+      $simple_df$columns$a$type
+      [1] "integer"
+      
+      $simple_df$columns$a$has_na
+      [1] FALSE
+      
+      $simple_df$columns$a$min
+      [1] 1
+      
+      $simple_df$columns$a$max
+      [1] 3
+      
+      
+      $simple_df$columns$b
+      $simple_df$columns$b$type
+      [1] "character"
+      
+      $simple_df$columns$b$has_na
+      [1] FALSE
+      
+      $simple_df$columns$b$n_unique
+      [1] 3
+      
+      $simple_df$columns$b$all_empty
+      [1] FALSE
+      
+      
+      
       
 
 # header snapshot with no dataframes
@@ -88,10 +269,98 @@
       
       $datastructure
       $datastructure$analysis_data
-      [1] "id"       "value"    "category"
+      $datastructure$analysis_data$dimensions
+      $datastructure$analysis_data$dimensions$rows
+      [1] 10
+      
+      $datastructure$analysis_data$dimensions$cols
+      [1] 3
+      
+      
+      $datastructure$analysis_data$columns
+      $datastructure$analysis_data$columns$id
+      $datastructure$analysis_data$columns$id$type
+      [1] "integer"
+      
+      $datastructure$analysis_data$columns$id$has_na
+      [1] FALSE
+      
+      $datastructure$analysis_data$columns$id$min
+      [1] 1
+      
+      $datastructure$analysis_data$columns$id$max
+      [1] 10
+      
+      
+      $datastructure$analysis_data$columns$value
+      $datastructure$analysis_data$columns$value$type
+      [1] "numeric"
+      
+      $datastructure$analysis_data$columns$value$has_na
+      [1] FALSE
+      
+      $datastructure$analysis_data$columns$value$min
+      [1] -0.5646982
+      
+      $datastructure$analysis_data$columns$value$max
+      [1] 2.018424
+      
+      
+      $datastructure$analysis_data$columns$category
+      $datastructure$analysis_data$columns$category$type
+      [1] "character"
+      
+      $datastructure$analysis_data$columns$category$has_na
+      [1] FALSE
+      
+      $datastructure$analysis_data$columns$category$n_unique
+      [1] 2
+      
+      $datastructure$analysis_data$columns$category$all_empty
+      [1] FALSE
+      
+      
+      
       
       $datastructure$result_data
-      [1] "group" "mean" 
+      $datastructure$result_data$dimensions
+      $datastructure$result_data$dimensions$rows
+      [1] 2
+      
+      $datastructure$result_data$dimensions$cols
+      [1] 2
+      
+      
+      $datastructure$result_data$columns
+      $datastructure$result_data$columns$group
+      $datastructure$result_data$columns$group$type
+      [1] "character"
+      
+      $datastructure$result_data$columns$group$has_na
+      [1] FALSE
+      
+      $datastructure$result_data$columns$group$n_unique
+      [1] 2
+      
+      $datastructure$result_data$columns$group$all_empty
+      [1] FALSE
+      
+      
+      $datastructure$result_data$columns$mean
+      $datastructure$result_data$columns$mean$type
+      [1] "numeric"
+      
+      $datastructure$result_data$columns$mean$has_na
+      [1] FALSE
+      
+      $datastructure$result_data$columns$mean$min
+      [1] -0.3
+      
+      $datastructure$result_data$columns$mean$max
+      [1] 0.5
+      
+      
+      
       
       
       $packages
@@ -125,7 +394,44 @@
       
       $datastructure
       $datastructure$my_data
-      [1] "x" "y"
+      $datastructure$my_data$dimensions
+      $datastructure$my_data$dimensions$rows
+      [1] 5
+      
+      $datastructure$my_data$dimensions$cols
+      [1] 2
+      
+      
+      $datastructure$my_data$columns
+      $datastructure$my_data$columns$x
+      $datastructure$my_data$columns$x$type
+      [1] "integer"
+      
+      $datastructure$my_data$columns$x$has_na
+      [1] FALSE
+      
+      $datastructure$my_data$columns$x$min
+      [1] 1
+      
+      $datastructure$my_data$columns$x$max
+      [1] 5
+      
+      
+      $datastructure$my_data$columns$y
+      $datastructure$my_data$columns$y$type
+      [1] "character"
+      
+      $datastructure$my_data$columns$y$has_na
+      [1] FALSE
+      
+      $datastructure$my_data$columns$y$n_unique
+      [1] 5
+      
+      $datastructure$my_data$columns$y$all_empty
+      [1] FALSE
+      
+      
+      
       
       
       $packages
@@ -184,10 +490,198 @@
       
       $datastructure
       $datastructure$mixed_types
-      [1] "id"     "name"   "score"  "passed" "date"  
+      $datastructure$mixed_types$dimensions
+      $datastructure$mixed_types$dimensions$rows
+      [1] 3
+      
+      $datastructure$mixed_types$dimensions$cols
+      [1] 5
+      
+      
+      $datastructure$mixed_types$columns
+      $datastructure$mixed_types$columns$id
+      $datastructure$mixed_types$columns$id$type
+      [1] "integer"
+      
+      $datastructure$mixed_types$columns$id$has_na
+      [1] FALSE
+      
+      $datastructure$mixed_types$columns$id$min
+      [1] 1
+      
+      $datastructure$mixed_types$columns$id$max
+      [1] 3
+      
+      
+      $datastructure$mixed_types$columns$name
+      $datastructure$mixed_types$columns$name$type
+      [1] "character"
+      
+      $datastructure$mixed_types$columns$name$has_na
+      [1] FALSE
+      
+      $datastructure$mixed_types$columns$name$n_unique
+      [1] 3
+      
+      $datastructure$mixed_types$columns$name$all_empty
+      [1] FALSE
+      
+      
+      $datastructure$mixed_types$columns$score
+      $datastructure$mixed_types$columns$score$type
+      [1] "numeric"
+      
+      $datastructure$mixed_types$columns$score$has_na
+      [1] FALSE
+      
+      $datastructure$mixed_types$columns$score$min
+      [1] 78.9
+      
+      $datastructure$mixed_types$columns$score$max
+      [1] 92.3
+      
+      
+      $datastructure$mixed_types$columns$passed
+      $datastructure$mixed_types$columns$passed$type
+      [1] "logical"
+      
+      $datastructure$mixed_types$columns$passed$has_na
+      [1] FALSE
+      
+      
+      $datastructure$mixed_types$columns$date
+      $datastructure$mixed_types$columns$date$type
+      [1] "Date"
+      
+      $datastructure$mixed_types$columns$date$has_na
+      [1] FALSE
+      
+      
+      
       
       $datastructure$wide_data
-      [1] "col1" "col2" "col3" "col4" "col5" "col6" "col7" "col8"
+      $datastructure$wide_data$dimensions
+      $datastructure$wide_data$dimensions$rows
+      [1] 3
+      
+      $datastructure$wide_data$dimensions$cols
+      [1] 8
+      
+      
+      $datastructure$wide_data$columns
+      $datastructure$wide_data$columns$col1
+      $datastructure$wide_data$columns$col1$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col1$has_na
+      [1] FALSE
+      
+      $datastructure$wide_data$columns$col1$min
+      [1] 1
+      
+      $datastructure$wide_data$columns$col1$max
+      [1] 3
+      
+      
+      $datastructure$wide_data$columns$col2
+      $datastructure$wide_data$columns$col2$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col2$has_na
+      [1] FALSE
+      
+      $datastructure$wide_data$columns$col2$min
+      [1] 4
+      
+      $datastructure$wide_data$columns$col2$max
+      [1] 6
+      
+      
+      $datastructure$wide_data$columns$col3
+      $datastructure$wide_data$columns$col3$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col3$has_na
+      [1] FALSE
+      
+      $datastructure$wide_data$columns$col3$min
+      [1] 7
+      
+      $datastructure$wide_data$columns$col3$max
+      [1] 9
+      
+      
+      $datastructure$wide_data$columns$col4
+      $datastructure$wide_data$columns$col4$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col4$has_na
+      [1] FALSE
+      
+      $datastructure$wide_data$columns$col4$min
+      [1] 10
+      
+      $datastructure$wide_data$columns$col4$max
+      [1] 12
+      
+      
+      $datastructure$wide_data$columns$col5
+      $datastructure$wide_data$columns$col5$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col5$has_na
+      [1] FALSE
+      
+      $datastructure$wide_data$columns$col5$min
+      [1] 13
+      
+      $datastructure$wide_data$columns$col5$max
+      [1] 15
+      
+      
+      $datastructure$wide_data$columns$col6
+      $datastructure$wide_data$columns$col6$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col6$has_na
+      [1] FALSE
+      
+      $datastructure$wide_data$columns$col6$min
+      [1] 16
+      
+      $datastructure$wide_data$columns$col6$max
+      [1] 18
+      
+      
+      $datastructure$wide_data$columns$col7
+      $datastructure$wide_data$columns$col7$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col7$has_na
+      [1] FALSE
+      
+      $datastructure$wide_data$columns$col7$min
+      [1] 19
+      
+      $datastructure$wide_data$columns$col7$max
+      [1] 21
+      
+      
+      $datastructure$wide_data$columns$col8
+      $datastructure$wide_data$columns$col8$type
+      [1] "integer"
+      
+      $datastructure$wide_data$columns$col8$has_na
+      [1] FALSE
+      
+      $datastructure$wide_data$columns$col8$min
+      [1] 22
+      
+      $datastructure$wide_data$columns$col8$max
+      [1] 24
+      
+      
+      
       
       
       $packages

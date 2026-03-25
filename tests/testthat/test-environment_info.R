@@ -164,6 +164,7 @@ test_that("header snapshot with no dataframes", {
 test_that("environment_info snapshot with complete environment", {
   # Set up test environment
   test_env <- new.env(parent = emptyenv())
+  set.seed(42)
   test_env$analysis_data <- data.frame(
     id = 1:10,
     value = rnorm(10),

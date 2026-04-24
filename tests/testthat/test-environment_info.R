@@ -29,6 +29,7 @@ EXAMPLE_SCRIPT <- c(
 
 # Test current_script function with RStudio API mock
 test_that("current_script snapshot with mocked RStudio API", {
+  # Mock RStudio API with example script
   local_mocked_bindings(
     getSourceEditorContext = function() {
       list(contents = EXAMPLE_SCRIPT)
@@ -66,8 +67,10 @@ test_that("current_script returns NULL when script content is NULL", {
 
 # Test environment_objects function
 test_that("environment_objects snapshot with various object types", {
+  # Create a clean environment for testing
   test_env <- new.env(parent = emptyenv())
 
+  # Add various objects to the test environment
   test_env$my_dataframe <- data.frame(
     id = 1:5,
     name = c("Alice", "Bob", "Charlie", "David", "Eve"),
@@ -80,6 +83,7 @@ test_that("environment_objects snapshot with various object types", {
   test_env$my_function <- function(x) x^2
   test_env$another_function <- function(a, b) a + b
 
+  # Mock .GlobalEnv to be our test environment
   local_mocked_bindings(
     .GlobalEnv = test_env,
     .package = "base"
@@ -105,6 +109,7 @@ test_that("environment_objects snapshot with empty environment", {
 test_that("header snapshot with multiple dataframes", {
   test_env <- new.env(parent = emptyenv())
 
+  # Add dataframes with different structures
   test_env$iris_subset <- data.frame(
     Sepal.Length = c(5.1, 4.9, 4.7),
     Sepal.Width = c(3.5, 3.0, 3.2),
@@ -125,6 +130,7 @@ test_that("header snapshot with multiple dataframes", {
     b = c("x", "y", "z")
   )
 
+  # Add non-dataframe objects (should be ignored by header)
   test_env$my_var <- 100
   test_env$my_func <- function(x) x
 
@@ -140,6 +146,7 @@ test_that("header snapshot with multiple dataframes", {
 test_that("header snapshot with no dataframes", {
   test_env <- new.env(parent = emptyenv())
 
+  # Add only non-dataframe objects
   test_env$var1 <- 42
   test_env$var2 <- "text"
   test_env$func1 <- function(x) x + 1
@@ -155,6 +162,7 @@ test_that("header snapshot with no dataframes", {
 
 # Test environment_info function
 test_that("environment_info snapshot with complete environment", {
+  # Set up test environment
   test_env <- new.env(parent = emptyenv())
   set.seed(42)
   test_env$analysis_data <- data.frame(
@@ -174,6 +182,7 @@ test_that("environment_info snapshot with complete environment", {
     .package = "base"
   )
 
+  # Mock RStudio API
   local_mocked_bindings(
     getSourceEditorContext = function() {
       list(contents = EXAMPLE_SCRIPT)
@@ -181,17 +190,20 @@ test_that("environment_info snapshot with complete environment", {
     .package = "rstudioapi"
   )
 
+  # Mock last_code
   local_mocked_bindings(
     last_code = function() {
       "result_data <- analysis_data %>% group_by(category) %>% summarise(mean = calculate_mean(value))"
     }
   )
 
+  # Mock geterrmessage
   local_mocked_bindings(
     geterrmessage = function() "Error in mean(x) : object 'x' not found",
     .package = "base"
   )
 
+  # Mock loadedNamespaces
   local_mocked_bindings(
     loadedNamespaces = function() c("base", "stats", "graphics", "grDevices", "utils", "datasets", "methods", "testthat", "rainer", "dplyr", "ggplot2"),
     .package = "base"
@@ -211,6 +223,7 @@ test_that("environment_info snapshot without error message", {
     .package = "base"
   )
 
+  # Mock RStudio API
   local_mocked_bindings(
     getSourceEditorContext = function() {
       list(contents = EXAMPLE_SCRIPT)
@@ -218,12 +231,14 @@ test_that("environment_info snapshot without error message", {
     .package = "rstudioapi"
   )
 
+  # Mock last_code
   local_mocked_bindings(
     last_code = function() {
       "config <- list(setting1 = TRUE, setting2 = 100)"
     }
   )
 
+  # Mock loadedNamespaces
   local_mocked_bindings(
     loadedNamespaces = function() c("base", "stats", "graphics", "utils", "testthat", "rainer"),
     .package = "base"
@@ -241,6 +256,7 @@ test_that("environment_info snapshot with minimal environment", {
     .package = "base"
   )
 
+  # Mock RStudio API to return NULL (not in RStudio)
   local_mocked_bindings(
     getSourceEditorContext = function() {
       stop("Not in RStudio")
@@ -248,11 +264,13 @@ test_that("environment_info snapshot with minimal environment", {
     .package = "rstudioapi"
   )
 
+  # Mock last_code for non-interactive
   local_mocked_bindings(
     interactive = function() FALSE,
     .package = "base"
   )
 
+  # Mock loadedNamespaces
   local_mocked_bindings(
     loadedNamespaces = function() c("base", "testthat", "rainer"),
     .package = "base"
@@ -265,6 +283,7 @@ test_that("environment_info snapshot with minimal environment", {
 test_that("environment_info snapshot with complex nested dataframes", {
   test_env <- new.env(parent = emptyenv())
 
+  # Create dataframes with many columns
   test_env$wide_data <- data.frame(
     col1 = 1:3, col2 = 4:6, col3 = 7:9, col4 = 10:12,
     col5 = 13:15, col6 = 16:18, col7 = 19:21, col8 = 22:24
@@ -286,6 +305,7 @@ test_that("environment_info snapshot with complex nested dataframes", {
     .package = "base"
   )
 
+  # Mock RStudio API
   local_mocked_bindings(
     getSourceEditorContext = function() {
       list(contents = EXAMPLE_SCRIPT)
@@ -293,17 +313,20 @@ test_that("environment_info snapshot with complex nested dataframes", {
     .package = "rstudioapi"
   )
 
+  # Mock last_code
   local_mocked_bindings(
     last_code = function() {
       "mixed_types <- data.frame(id = 1:3, name = c('John', 'Jane', 'Bob'), score = c(85.5, 92.3, 78.9), passed = c(TRUE, TRUE, FALSE), date = as.Date(c('2025-01-01', '2025-01-02', '2025-01-03')))"
     }
   )
 
+  # Mock geterrmessage
   local_mocked_bindings(
     geterrmessage = function() "",
     .package = "base"
   )
 
+  # Mock loadedNamespaces
   local_mocked_bindings(
     loadedNamespaces = function() c("base", "stats", "utils", "testthat", "rainer"),
     .package = "base"
@@ -313,68 +336,92 @@ test_that("environment_info snapshot with complex nested dataframes", {
   expect_snapshot(result)
 })
 
-# Test current_script length limiting
-test_that("current_script truncates long scripts correctly", {
-  long_script <- paste0("line_", 1:250)
-
+test_that("current_script returns full script when short enough", {
   local_mocked_bindings(
     getSourceEditorContext = function() {
-      list(contents = long_script)
+      list(
+        contents = EXAMPLE_SCRIPT,
+        selection = list(list(range = list(
+          start = structure(c(row = 10, column = 1), class = "document_position"),
+          end = structure(c(row = 10, column = 1), class = "document_position")
+        )))
+      )
     },
     .package = "rstudioapi"
   )
 
   result <- current_script()
 
-  # Should contain the omission message
-  expect_true(grepl("lines omitted", result))
-
-  # Should contain first line with correct line number
-  expect_true(grepl("L1:line_1", result))
-
-  # Should contain last line with correct original line number
-  expect_true(grepl("L201:line_201", result))
-
-  expect_true(grepl("L250:line_250", result))
-
-  # Should not contain a middle line
-  expect_false(grepl("L160:line_160", result))
-})
-
-test_that("current_script truncates long individual lines correctly", {
-  long_line <- paste0(rep("a", 600), collapse = "")
-  script_with_long_line <- c("normal line", long_line, "another normal line")
-
-  local_mocked_bindings(
-    getSourceEditorContext = function() {
-      list(contents = script_with_long_line)
-    },
-    .package = "rstudioapi"
-  )
-
-  result <- current_script()
-
-  # Should contain truncation marker
-  expect_true(grepl("\\.\\.\\[line truncated\\]", result))
-
-  # Normal lines should be unchanged
-  expect_true(grepl("normal line", result))
-})
-
-test_that("current_script does not truncate short scripts", {
-  local_mocked_bindings(
-    getSourceEditorContext = function() {
-      list(contents = EXAMPLE_SCRIPT)
-    },
-    .package = "rstudioapi"
-  )
-
-  result <- current_script()
-
-  # Should not contain omission message
   expect_false(grepl("lines omitted", result))
+  expect_true(grepl("L1:", result))
+  expect_true(grepl("L22:", result))
+})
 
-  # Should contain all lines
-  expect_true(grepl("library\\(dplyr\\)", result))
-  expect_true(grepl("print\\(result_data\\)", result))
+test_that("current_script truncates long scripts using cursor position", {
+  long_script <- paste0("x_", 1:1500, " <- ", 1:1500)
+
+  local_mocked_bindings(
+    getSourceEditorContext = function() {
+      list(
+        contents = long_script,
+        selection = list(list(range = list(
+          start = structure(c(row = 750, column = 1), class = "document_position"),
+          end = structure(c(row = 750, column = 1), class = "document_position")
+        )))
+      )
+    },
+    .package = "rstudioapi"
+  )
+
+  result <- current_script()
+
+  expect_true(grepl("lines omitted", result))
+  expect_true(grepl("L1:", result))
+  expect_true(grepl("L750:", result))
+  expect_false(grepl("L200:x_200", result))
+})
+
+test_that("current_script applies character limit", {
+  long_script <- paste0(rep(paste(rep("a", 100), collapse = ""), 500), 1:500)
+
+  local_mocked_bindings(
+    getSourceEditorContext = function() {
+      list(
+        contents = long_script,
+        selection = list(list(range = list(
+          start = structure(c(row = 250, column = 1), class = "document_position"),
+          end = structure(c(row = 250, column = 1), class = "document_position")
+        )))
+      )
+    },
+    .package = "rstudioapi"
+  )
+
+  result <- current_script()
+
+  expect_true(nchar(result) <= 15100)
+  expect_true(grepl("truncated due to character limit", result))
+})
+
+test_that("current_script is better when cursor is near end of document", {
+  long_script <- paste0("x_", 1:1500, " <- ", 1:1500)
+
+  local_mocked_bindings(
+    getSourceEditorContext = function() {
+      list(
+        contents = long_script,
+        selection = list(list(range = list(
+          start = structure(c(row = 1490, column = 1), class = "document_position"),
+          end = structure(c(row = 1490, column = 1), class = "document_position")
+        )))
+      )
+    },
+    .package = "rstudioapi"
+  )
+
+  result <- current_script()
+
+  expect_true(grepl("L1490:", result))
+  expect_true(grepl("L1500:", result))
+  expect_true(grepl("lines omitted", result))
 })

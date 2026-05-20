@@ -335,3 +335,93 @@ test_that("environment_info snapshot with complex nested dataframes", {
   result <- environment_info(error = TRUE)
   expect_snapshot(result)
 })
+
+test_that("current_script returns full script when short enough", {
+  local_mocked_bindings(
+    getSourceEditorContext = function() {
+      list(
+        contents = EXAMPLE_SCRIPT,
+        selection = list(list(range = list(
+          start = structure(c(row = 10, column = 1), class = "document_position"),
+          end = structure(c(row = 10, column = 1), class = "document_position")
+        )))
+      )
+    },
+    .package = "rstudioapi"
+  )
+
+  result <- current_script()
+
+  expect_false(grepl("lines omitted", result))
+  expect_true(grepl("L1:", result))
+  expect_true(grepl("L22:", result))
+})
+
+test_that("current_script truncates long scripts using cursor position", {
+  long_script <- paste0("x_", 1:1500, " <- ", 1:1500)
+
+  local_mocked_bindings(
+    getSourceEditorContext = function() {
+      list(
+        contents = long_script,
+        selection = list(list(range = list(
+          start = structure(c(row = 750, column = 1), class = "document_position"),
+          end = structure(c(row = 750, column = 1), class = "document_position")
+        )))
+      )
+    },
+    .package = "rstudioapi"
+  )
+
+  result <- current_script()
+
+  expect_true(grepl("lines omitted", result))
+  expect_true(grepl("L1:", result))
+  expect_true(grepl("L750:", result))
+  expect_false(grepl("L200:x_200", result))
+})
+
+test_that("current_script applies character limit", {
+  long_script <- paste0(rep(paste(rep("a", 100), collapse = ""), 500), 1:500)
+
+  local_mocked_bindings(
+    getSourceEditorContext = function() {
+      list(
+        contents = long_script,
+        selection = list(list(range = list(
+          start = structure(c(row = 250, column = 1), class = "document_position"),
+          end = structure(c(row = 250, column = 1), class = "document_position")
+        )))
+      )
+    },
+    .package = "rstudioapi"
+  )
+
+  result <- current_script()
+
+  expect_true(nchar(result) <= 15100)
+  expect_true(grepl("truncated due to character limit", result))
+})
+
+test_that("current_script is better when cursor is near end of document", {
+  long_script <- paste0("x_", 1:1500, " <- ", 1:1500)
+
+  local_mocked_bindings(
+    getSourceEditorContext = function() {
+      list(
+        contents = long_script,
+        selection = list(list(range = list(
+          start = structure(c(row = 1490, column = 1), class = "document_position"),
+          end = structure(c(row = 1490, column = 1), class = "document_position")
+        )))
+      )
+    },
+    .package = "rstudioapi"
+  )
+
+  result <- current_script()
+
+  expect_true(grepl("L1490:", result))
+  expect_true(grepl("L1500:", result))
+  expect_true(grepl("lines omitted", result))
+})
